@@ -13,7 +13,7 @@ const Signup = () => {
     phoneNumber: "",
     alternateNumber: "",
     email: "",
-    zip: "",
+    v_number: "",
     password: "",
     confirmPassword: "",
   });
@@ -64,109 +64,125 @@ const Signup = () => {
   return (
     <>
       <form className="signup-form" onSubmit={handleSubmit}>
-        <h2 className="title">Sign Up</h2>
-        <div className="input-field">
-          <i className="fas fa-user"></i>
-          <input
-            type="text"
-            placeholder="full name"
-            name="userName"
-            onChange={handleChange}
-            value={credentials.userName}
-          />
-        </div>
-        <div className="input-field">
-          <i className="fas fa-phone"></i>
-          <input
-            type="text"
-            placeholder="phone number"
-            name="phoneNumber"
-            onChange={handleChange}
-            value={credentials.phoneNumber}
-          />
-        </div>
-        <div className="input-field">
-          <i className="fas fa-phone"></i>
-          <input
-            type="text"
-            placeholder="Alternate number"
-            name="alternateNumber"
-            onChange={handleChange}
-            value={credentials.alternateNumber}
-          />
-        </div>
-        <div className="input-field">
-          <i className="fas fa-envelope"></i>
-          <input
-            type="text"
-            placeholder="email"
-            name="email"
-            onChange={handleChange}
-            value={credentials.email}
-          />
-        </div>
-        <div className="input-field">
-          <i className="fas fa-envelope"></i>
-          <input
-            type="number"
-            placeholder="zip code"
-            name="zip"
-            onChange={handleChange}
-            value={credentials.zip}
-          />
-        </div>
-        {/* Password */}
-        <div className="input-field">
-          <i className="fas fa-lock"></i>
-          <input
-            className="pe-5"
-            type={showPassword ? "text" : "password"}
-            placeholder="password"
-            name="password"
-            onChange={handleChange}
-            value={credentials.password}
-          />
-          <span
-            className="password-toggle"
-            onClick={togglePasswordVisibility}
-            style={{
-              position: "absolute",
-              right: "20px",
-            }}
-          >
-            {showPassword ? (
-              <i className="fas fa-eye-slash"></i>
-            ) : (
-              <i className="fas fa-eye"></i>
-            )}
-          </span>
-        </div>
-        {/* Confirm Password */}
-
-        <div className="input-field">
-          <i className="fas fa-key"></i>
-          <input
-            className="pe-5"
-            type={showConfPassword ? "text" : "password"}
-            placeholder="repeat password"
-            name="confirmPassword"
-            onChange={handleChange}
-            value={credentials.confirmPassword}
-          />
-          <span
-            className="password-toggle"
-            onClick={toggleConfPasswordVisibility}
-            style={{
-              position: "absolute",
-              right: "20px",
-            }}
-          >
-            {showConfPassword ? (
-              <i className="fas fa-eye-slash"></i>
-            ) : (
-              <i className="fas fa-eye"></i>
-            )}
-          </span>
+        <h2 className="title mb-5 fw-bold">SIGN UP</h2>
+        <div className="row">
+          <div className="col-md-6">
+            <div className="input-field">
+              <i className="fas fa-user"></i>
+              <input
+                type="text"
+                placeholder="full name"
+                name="userName"
+                onChange={handleChange}
+                value={credentials.userName}
+              />
+            </div>
+          </div>
+          <div className="col-md-6">
+            <div className="input-field">
+              <i className="fas fa-envelope"></i>
+              <input
+                type="text"
+                placeholder="email"
+                name="email"
+                onChange={handleChange}
+                value={credentials.email}
+              />
+            </div>
+          </div>
+          <div className="col-md-6">
+            <div className="input-field">
+              <i className="fas fa-phone"></i>
+              <input
+                type="text"
+                placeholder="phone number"
+                name="phoneNumber"
+                onChange={handleChange}
+                value={credentials.phoneNumber}
+              />
+            </div>
+          </div>
+          <div className="col-md-6">
+            <div className="input-field">
+              <i className="fas fa-phone"></i>
+              <input
+                type="text"
+                placeholder="Alternate number"
+                name="alternateNumber"
+                onChange={handleChange}
+                value={credentials.alternateNumber}
+              />
+            </div>
+          </div>
+          <div className="col-12">
+            <label for="inputAddress2" class="mt-2 opacity-50">To add multiple vehicle number use comma (,) in between. </label>
+            <div class="input-wrapper">
+              <i class="fas fa-car"></i>
+              <input 
+                type="text" 
+                class="form-control input-field2" 
+                id="inputAddress2" 
+                name="v_number"
+                onChange={handleChange}
+                value={credentials.v_number}
+                placeholder="Vehicle Numbers...Ex- AS11GXXXX, MH15WCXXXX" 
+              />
+            </div>
+          </div>
+          <div className="col-md-6">
+            <div className="input-field">
+              <i className="fas fa-lock"></i>
+              <input
+                className="pe-5"
+                type={showPassword ? "text" : "password"}
+                placeholder="password"
+                name="password"
+                onChange={handleChange}
+                value={credentials.password}
+              />
+              <span
+                className="password-toggle"
+                onClick={togglePasswordVisibility}
+                style={{
+                  position: "absolute",
+                  right: "20px",
+                }}
+              >
+                {showPassword ? (
+                  <i className="fas fa-eye-slash"></i>
+                ) : (
+                  <i className="fas fa-eye"></i>
+                )}
+              </span>
+            </div>
+          </div>
+          <div className="col-md-6">
+            <div className="input-field">
+              <i className="fas fa-key"></i>
+              <input
+                className="pe-5"
+                type={showConfPassword ? "text" : "password"}
+                placeholder="repeat password"
+                name="confirmPassword"
+                onChange={handleChange}
+                value={credentials.confirmPassword}
+              />
+              <span
+                className="password-toggle"
+                onClick={toggleConfPasswordVisibility}
+                style={{
+                  position: "absolute",
+                  right: "20px",
+                }}
+              >
+                {showConfPassword ? (
+                  <i className="fas fa-eye-slash"></i>
+                ) : (
+                  <i className="fas fa-eye"></i>
+                )}
+              </span>
+            </div>
+          </div>
         </div>
         {loading ? (
           <div
