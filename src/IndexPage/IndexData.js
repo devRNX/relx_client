@@ -1,5 +1,5 @@
-import icon1 from "../assets/svg/undraw_traveling_yhxq.svg";
-import icon2 from "../assets/svg/undraw_toy_car_-7-umw.svg";
+// import icon1 from "../assets/svg/undraw_traveling_yhxq.svg";
+// import icon2 from "../assets/svg/undraw_toy_car_-7-umw.svg";
 import icon3 from "../assets/svg/undraw_make_it_rain_re_w9pc.svg";
 import icon4 from "../assets/svg/undraw_credit_card_payments_re_qboh.svg";
 

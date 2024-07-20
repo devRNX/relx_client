@@ -1,7 +1,7 @@
 import React from 'react'
 import './IndexHome.css'
 import {ServiceText,ServicesHeader,ServiceDescription,ServiceWrapper} from '../components/Services/Style.js'
-import Services from "../components/Services/Services";
+// import Services from "../components/Services/Services";
 import { Container } from "../global-styles.js";
 import data from "./IndexData.js"
 import ServiceCard from '../components/Services/ServiceCard.js';
