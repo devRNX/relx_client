@@ -83,7 +83,7 @@ function Dashboard() {
   return (
     <>
       <div className="container my-5 pt-5">
-        <div className="card w-100 shadow border-0">
+        <div className="card w-100 shadow border-0 my-5">
           <div className="card-header shadow alert-bg-colour">
             <div className="alert" role="alert">
               <span className="">

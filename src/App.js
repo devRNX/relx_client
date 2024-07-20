@@ -12,10 +12,10 @@ import Dashboard from "./components/Dashboard/Dashboard";
 import ResetPass from "./components/ResetPassword/ResetPass";
 import NewPassword from "./components/ResetPassword/NewPassword";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import IndexHome from "./IndexPage/IndexHome";
 
 function App() {
-  const [token, setToken] = useState(() => getToken()); // Initialize with the token from localStorage
-  console.log(token);
+  const [token, setToken] = useState(() => getToken());
   useEffect(() => {
     const newToken = getToken();
     if (newToken) {
@@ -31,6 +31,7 @@ function App() {
         <Route
           path="/"
           exact
+          // element={!token ? <Home /> : <Navigate to="/dashboard" />}
           element={!token ? <Home /> : <Navigate to="/dashboard" />}
         /> 
         <Route path="/register" exact element={<Auth mode="signup-mode" />} />
@@ -39,7 +40,7 @@ function App() {
         <Route path={"/new/password/:id?"} exact element={<NewPassword />} />
         <Route path={"/admin/login"} exact element={<AdminLogIn />} />
         <Route path={"/admin/dashboard"} exact element={<AdminDashboard />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/dashboard" element={<IndexHome />} />
       </Routes>
         <Footer/>
     </BrowserRouter>

@@ -1,0 +1,16 @@
+
+.mainText {
+    margin-left: 28rem;
+}
+
+.urlLink {
+    margin-left: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background-color: #95D2B3;
+    text-decoration: underline;
+    text-decoration-color: #F1F8E8;
+}
+.dataCards {
+    margin-left: 10rem;
+}

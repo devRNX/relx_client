@@ -20,6 +20,8 @@ export default function ServiceCard({ data }) {
           <ServiceCardHeader>{data.header}</ServiceCardHeader>
           <ServiceCardDescription>{data.description}</ServiceCardDescription>
           <ServiceCardFooter>{data.footer}</ServiceCardFooter>
+          <ServiceCardFooter>{data.footer2}</ServiceCardFooter>
+          <ServiceCardFooter>{data.footer3}</ServiceCardFooter>
         </ServiceCardDetails>
       </ServiceCardContent>
     )

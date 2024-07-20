@@ -1,20 +1,20 @@
 const data = [
     {
         to: '/',
-        text: 'Services',
-        id: 'services'
+        text:'Add Alerts',
+        id: 'alerts',
     },
     
     {
         to: '/',
-        text: 'About Us',
-        id: 'about'
+        text: 'Add Vehicles',
+        id: 'vehicle'
     },
 
     {
         to: '/',
-        text: 'Contact',
-        id: 'contact'
+        text: 'About Us',
+        id: 'aboutUs'
     }
 ]
 

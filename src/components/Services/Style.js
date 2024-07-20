@@ -61,8 +61,11 @@ export const ServiceCardDetails = styled.div`
 export const ServiceCardHeader = styled.div`
     font-weight: 700;
     margin: 1rem 0;
+    margin-left: 1.5rem;
 `;
 
 export const ServiceCardDescription = styled.div``;
 
-export const ServiceCardFooter = styled.div``;
+export const ServiceCardFooter = styled.div`
+    margin-left: 1.5rem
+`;
