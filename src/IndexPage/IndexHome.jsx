@@ -16,7 +16,7 @@ function IndexHome() {
         <p className='my-4 infoT fs-5'>Your Details</p>
         <div className="row mt-4">
           <div className="col-lg-6">
-            <div className="card rounded-4 border-success-subtle shadow">
+            <div className="card rounded-4 border-success-subtle shadow card-hover">
               <div className="mt-3">
                <span className='infoText1'> Your Alerts </span>
               </div>

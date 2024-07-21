@@ -30,3 +30,8 @@
     font-weight: bold;
 
 }
+
+.card-hover:hover {
+    background-color: #95D2B3;
+    cursor: pointer;
+}
