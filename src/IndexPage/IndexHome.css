@@ -30,6 +30,17 @@
     font-weight: bold;
 
 }
+@keyframes bounce {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+}
 
 .card-hover-effect {
     transition: background-color 0.9s ease; /* Adjust the duration and easing as needed */
@@ -39,4 +50,5 @@
     background-color: #d4f8e6;
     cursor: pointer;
     box-shadow: 0 4px 8px rgba(0, 128, 0, 0.2);
+    animation: bounce 0.6s ease; 
 }
