@@ -36,6 +36,7 @@
 }
 
 .card-hover:hover {
-    background-color: #95D2B3;
+    background-color: #c0f3da;
     cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 128, 0, 0.2);
 }
