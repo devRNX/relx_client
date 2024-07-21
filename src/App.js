@@ -8,7 +8,7 @@ import Footer from "./components/Footer/Footer";
 import Navbar from "./components/Navbar/Navbar";
 import { getToken } from "./services/localStorage";
 import AdminDashboard from "./Admin/AdminDashboard";
-// import Dashboard from "./components/Dashboard/Dashboard";
+import Dashboard from "./components/Dashboard/Dashboard";
 import ResetPass from "./components/ResetPassword/ResetPass";
 import NewPassword from "./components/ResetPassword/NewPassword";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
@@ -41,6 +41,7 @@ function App() {
         <Route path={"/admin/login"} exact element={<AdminLogIn />} />
         <Route path={"/admin/dashboard"} exact element={<AdminDashboard />} />
         <Route path="/dashboard" element={<IndexHome />} />
+        <Route path="/alerts" element={<Dashboard />} />
       </Routes>
         <Footer/>
     </BrowserRouter>

@@ -1,7 +1,15 @@
 import './IndexHome.css'
+import { useNavigate } from 'react-router-dom'
 
 
 function IndexHome() {
+
+  const navigate = useNavigate()
+
+  const handleClickTab = (tab) => {
+    navigate('/alerts')
+  }
+
   return (
     <div className='my-5 pt-5'>
       <div className="container my-5 mainText">
@@ -17,7 +25,7 @@ function IndexHome() {
         <p className='my-4 infoT fs-5'>Your Details</p>
         <div className="row mt-4">
           <div className="col-lg-6">
-            <div className="card rounded-4 border-success-subtle shadow card-hover">
+            <div className="card rounded-4 border-success-subtle shadow card-hover"  onClick={handleClickTab}>
               <div className="mt-3">
                <span className='infoText1'> Your Alerts </span>
               </div>
@@ -33,7 +41,7 @@ function IndexHome() {
             </div>
           </div>
           <div className="col-lg-6">
-              <div className="card rounded-4 border-success-subtle shadow card-hover">
+              <div className="card rounded-4 border-success-subtle shadow card-hover" onClick={handleClickTab}>
                 <div className="mt-3">
                 <span className='infoText1'> Registered Vehicles </span>
                 </div>

@@ -30,25 +30,16 @@
     font-weight: bold;
 
 }
-@keyframes smooth-bounce {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.1); /* Peak bounce scale */
-    }
-    100% {
-      transform: scale(1); /* Return to original scale */
-    }
-}
 
 .card-hover-effect {
-    transition: background-color 0.9s ease; /* Adjust the duration and easing as needed */
+    transition: transform 0.5s cubic-bezier(0.30, 0.11, 0.2, 10), background-color 0.6s ease; /* Smooth transition with a custom easing function */
+    transform: scale(1); /* Normal state */
 }
 
 .card-hover:hover {
-    background-color: #ebfff5;
+    background-color: #dff5ea;
     cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 128, 0, 0.2);
-    animation: smooth-bounce 0.8s ease-in-out;
+    transform: scale(1.04);
+    
 }
+  

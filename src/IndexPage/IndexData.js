@@ -20,20 +20,7 @@ const data = [
     footer: "You Can add or Modify your Vehicle Numbers ",
     icon: icon3,
   },
-//   {
-//     background: "#fcd0db",
-//     header: "Alerts Sent Successfully",
-//     description: "",
-//     footer: "Last updated 3 mins ago",
-//     icon: icon1,
-//   },
-//   {
-//     background: "#CFF5E7",
-//     header: "Latest Updates",
-//     description: "",
-//     footer: "Last updated 3 mins ago",
-//     icon: icon4,
-//   },
+
 ];
 
 export default data;
