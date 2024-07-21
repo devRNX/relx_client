@@ -7,7 +7,7 @@
     margin-left: 1rem;
     padding-left: 1rem;
     padding-right: 1rem;
-    background-color: #95D2B3;
+    background-color: #bce8d2;
     text-decoration: underline;
     text-decoration-color: #F1F8E8;
 }
@@ -29,6 +29,10 @@
     margin-left: 3rem;
     font-weight: bold;
 
+}
+
+.card-hover-effect {
+    transition: background-color 0.3s ease; /* Adjust the duration and easing as needed */
 }
 
 .card-hover:hover {
