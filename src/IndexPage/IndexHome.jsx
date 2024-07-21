@@ -1,3 +1,4 @@
+import CreateAlert from './CreateAlert'
 import './IndexHome.css'
 import { useNavigate } from 'react-router-dom'
 
@@ -16,8 +17,10 @@ function IndexHome() {
         <h1 className='fw-regular'>Welcome To
           <span className='urlLink'>relynrelax.com </span> 
         </h1>
-        <span>The complete toolkit to turn one-time browsers into long-term
-          customers.
+        <span>
+          
+          Set a reminder with us at RelyNRelax, and we'll notify you on your chosen date <br></br> 
+          <span className='urlLink'>via call, WhatsApp, SMS, or Email.</span>
         </span>
       </div>
       
@@ -75,9 +78,7 @@ function IndexHome() {
             </ul>
           </div>
           <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#btnGO" class="btn btn-primary">Go somewhere</a>
+            <CreateAlert/>
           </div>
         </div>
       </div>
