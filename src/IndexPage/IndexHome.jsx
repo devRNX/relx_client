@@ -22,7 +22,7 @@ function IndexHome() {
       </div>
       
       <div className="container w-50">
-        <p className='my-4 infoT fs-5'>Your Details</p>
+        <p className='my-4 infoT fs-5'>Hello, Bishal Deb.</p>
         <div className="row mt-4">
           <div className="col-lg-6">
             <div className="card rounded-4 border-success-subtle shadow card-hover"  onClick={handleClickTab}>
@@ -55,6 +55,29 @@ function IndexHome() {
                 <span className='infoText2 fw-light fst-italic'>AS11D3456</span>
                 </div>
               </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="container w-50 my-5">
+        <div class="card text-center rounded-4 border-success-subtle shadow">
+          <div class="card-header my-4 bg-white">
+            <ul class="nav nav-tabs card-header-tabs">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="true" href="#">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Our Products</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link"  href="#">Updates</a>
+              </li>
+            </ul>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Special title treatment</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
           </div>
         </div>
       </div>

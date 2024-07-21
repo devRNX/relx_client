@@ -5,8 +5,7 @@ const Footer = () => {
     <footer
       className="mt-5"
       style={{
-        backgroundColor: "#d4f5bb",
-        color: "#1A5D1A",
+        backgroundColor: "#bce8d2",
       }}
     >
       <div className="container py-3">
