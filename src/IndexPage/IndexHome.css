@@ -1,6 +1,7 @@
 
 .mainText {
     margin-left: 28rem;
+    text-align: center;
 }
 
 .urlLink {
@@ -47,7 +48,7 @@
 }
 
 .card-hover:hover {
-    background-color: #d4f8e6;
+    background-color: #ebfff5;
     cursor: pointer;
     box-shadow: 0 4px 8px rgba(0, 128, 0, 0.2);
     animation: smooth-bounce 0.8s ease-in-out;

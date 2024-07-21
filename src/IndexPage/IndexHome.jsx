@@ -12,6 +12,7 @@ function IndexHome() {
           customers.
         </span>
       </div>
+      
       <div className="container w-50">
         <p className='my-4 infoT fs-5'>Your Details</p>
         <div className="row mt-4">
