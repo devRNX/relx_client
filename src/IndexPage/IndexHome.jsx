@@ -64,20 +64,20 @@ function IndexHome() {
           <div class="card-header my-4 bg-white">
             <ul class="nav nav-tabs card-header-tabs">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="true" href="#">About Us</a>
+                <a class="nav-link active" aria-current="true" href="#about">About Us</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Our Products</a>
+                <a class="nav-link" href="#product">Our Products</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link"  href="#">Updates</a>
+                <a class="nav-link"  href="#update">Updates</a>
               </li>
             </ul>
           </div>
           <div class="card-body">
             <h5 class="card-title">Special title treatment</h5>
             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <a href="#btnGO" class="btn btn-primary">Go somewhere</a>
           </div>
         </div>
       </div>
