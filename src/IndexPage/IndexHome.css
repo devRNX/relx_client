@@ -14,3 +14,19 @@
 .dataCards {
     margin-left: 10rem;
 }
+
+.infoT {
+    text-align: center;
+}
+
+.infoText2 {
+    margin-left: 3rem;
+    font-weight: lighter;
+    font-size: small;
+    margin-top: 5px;
+}
+.infoText1 {
+    margin-left: 3rem;
+    font-weight: bold;
+
+}
