@@ -1,0 +1,6 @@
+body{
+    background-image: url('../public/undraw_things_to_say_re_jpcg.svg');
+    background-size: 51% auto; /* Adjust as needed */
+    background-repeat: no-repeat;
+    background-position: calc(140% - 8%) 84%;
+}

@@ -14,6 +14,8 @@ import NewPassword from "./components/ResetPassword/NewPassword";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import IndexHome from "./IndexPage/IndexHome";
 
+import './app.css';
+
 function App() {
   const [token, setToken] = useState(() => getToken());
   useEffect(() => {

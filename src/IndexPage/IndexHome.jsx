@@ -67,13 +67,13 @@ function IndexHome() {
           <div class="card-header my-4 bg-white">
             <ul class="nav nav-tabs card-header-tabs">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="true" href="#about">About Us</a>
+                <a class="nav-link active" aria-current="true" href="#createA">Create Alerts</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#product">Our Products</a>
+                <a class="nav-link" href="#product">Your Vehicles</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link"  href="#update">Updates</a>
+                <a class="nav-link"  href="#update">Latest Updates</a>
               </li>
             </ul>
           </div>

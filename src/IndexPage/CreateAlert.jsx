@@ -95,11 +95,11 @@ function CreateAlert() {
           </div> */}
           <div className="card-body border-0">
             <div className="row">
-              <div className="col-lg-8">
+              <div className="col-lg-7">
                 <div className="alert alert-secondary">Your Alert Lists</div>
                 <Alert allAlert={allAlerts} onDelete={handleDelete} />
               </div>
-              <div className="col-lg-4">
+              <div className="col-lg-5">
                 <div className="alert alert-secondary">Create Alert</div>
                 <div className="container">
                   <select
