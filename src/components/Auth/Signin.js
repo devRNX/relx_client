@@ -22,6 +22,7 @@ const Signin = () => {
       if (!logInData.password) throw new Error("Password is required");
 
       const response = await loginUser(logInData);
+      console.log(response);
       setLoading(true);
       if (response.data.status === true) {
         setLoading(false);
