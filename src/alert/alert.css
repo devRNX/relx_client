@@ -1,0 +1,11 @@
+.custom-card {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth transition for transform and box-shadow */
+    cursor: pointer;
+}
+  
+.custom-card:hover {
+    background-color: #dff5ea;
+    transform: scale(1.05); /* Scale up the card on hover */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
+}
+  

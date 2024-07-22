@@ -84,15 +84,6 @@ function CreateAlert() {
     <>
       <div className="container mb-4">
         <div className="card w-100 shadow-sm border-0 ">
-          {/* <div className="card-header shadow alert-bg-colour">
-            <div className="alert" role="alert">
-              <span className="">
-                Note :- Create alert with required details and relyNrelax will
-                notify you on selected reminder date via call, whatsapp or sms,
-                email, etc.
-              </span>
-            </div>
-          </div> */}
           <div className="card-body border-0">
             <div className="row">
               <div className="col-lg-7">

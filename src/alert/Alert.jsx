@@ -1,57 +1,49 @@
 import React from "react";
-import AlertCard from "./AlertCard";
+// import AlertCard from "./AlertCard";
+import './alert.css'
 
 const Alert = ({ allAlert, onDelete }) => {
   return (
     <>
-      {allAlert && allAlert.data && allAlert.data.length > 0 ? (
-        <>
-          <div className="d-none d-md-block">
-            <table className="table table-secondary table-striped rounded shadow-sm">
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Alert Type</th>
-                  <th>Reminder Date</th>
-                  <th>Vehicle Number</th>
-                  <th>Status</th>
-                  <th>Delete</th>
-                </tr>
-              </thead>
-              <tbody>
-                {allAlert.data.map((a_data) => (
-                  <tr key={a_data._id}>
-                    <td>{a_data.a_name}</td>
-                    <td>{a_data.a_type}</td>
-                    <td>{a_data.a_end_date}</td>
-                    <td>{a_data.a_v_number}</td>
-                    <td>{a_data.a_status}</td>
-                    <td>
-                      <button
-                        className="btn btn-danger"
-                        onClick={() => onDelete(a_data._id)}
-                      >
-                        Delete
-                      </button>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+        {allAlert && allAlert.data && allAlert.data.length > 0 ? (
+          <div className="row">
+            {/* First Column */}
+            <div className="col-md-6">
+              {allAlert.data.slice(0, 2).map((a_data) => (  // Displaying first 2 cards
+                <div key={a_data._id} className="card shadow-sm custom-card mb-3">
+                  <div className="card-body">
+                    <div className="row">
+                      <div className="col">
+                        <h5 className="card-title">{a_data.a_name.substring(0, 9)}...</h5>
+                        <p className="card-text">Reminder Date: {a_data.a_end_date}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Second Column */}
+            <div className="col-md-6">
+              {allAlert.data.slice(2, 4).map((a_data) => (  // Displaying next 2 cards
+                <div key={a_data._id} className="card shadow-sm custom-card mb-3">
+                  <div className="card-body">
+                    <div className="row">
+                      <div className="col">
+                        <h5 className="card-title">{a_data.a_name.substring(0, 9)}...</h5>
+                        <p className="card-text">Reminder Date: {a_data.a_end_date}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="d-md-none">
-            {allAlert.data.map((a_data) => (
-              <AlertCard
-                key={a_data._id}
-                alertData={a_data}
-                onDelete={onDelete}
-              />
-            ))}
-          </div>
-        </>
-      ) : (
-        <p>No data available</p>
-      )}
+        ) : (
+        <div className="card">
+          <div className="card-title">No Alerts Created.Please create an alert.</div>
+        </div>
+        )}
     </>
   );
 };
