@@ -1,0 +1,48 @@
+.urlLink {
+    margin-left: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background-color: #bce8d2;
+    text-decoration: underline;
+    text-decoration-color: #F1F8E8;
+    text-align: center;
+}
+
+/* .reg_btn{
+    background-color: #bce8d2;
+}
+.reg_btn2{
+    background-color: #bce8d2;
+}
+
+.reg_btn_cont{
+    justify-content: center;
+} */
+
+.reg_btn {
+    background-color: #ffff;
+    border: 2px solid #bce8d2; /* Initially transparent border */
+    transition: border-color 0.3s, transform 0.3s; /* Transition effect for border color and transform */
+}
+
+.reg_btn:hover {
+    background-color: #bce8d2;
+    border-color: #bce8d2; /* Green border color on hover */
+    transform: scale(1.1); /* Scale up slightly on hover */
+}
+
+.reg_btn2 {
+    background-color: #ffff;
+    border: 2px solid #bce8d2; /* Initially transparent border */
+    transition: border-color 0.3s, transform 0.3s; /* Transition effect for border color and transform */
+}
+
+.reg_btn2:hover {
+    background-color: #bce8d2;
+    border-color: #bce8d2; /* Green border color on hover */
+    transform: scale(1.1); /* Scale up slightly on hover */
+}
+
+.logoImg1 {
+    width: 10rem;
+}

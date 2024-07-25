@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export const Nav = styled.nav`
   position: fixed !important;
   background: transparent;
-  background-color: #d4f5bb;
+  background-color: #ffff;
   height: 80px;
   display: flex;
   justify-content: center;
@@ -44,6 +44,7 @@ export const NavLogoImg = styled.img`
   width: auto;
   object-fit: cover;
   margin-left: 40px;
+  margin-top: 20px;
 
   @media screen and (max-width: 960px) {
     height: 60%;
@@ -140,7 +141,8 @@ export const NavMenu = styled.ul`
   list-style: none;
   text-align: center;
   width: 100%;
-  margin-top: 10px;
+  margin-top: 40px;
+  margin-left: 20rem;
 
   @media screen and (max-width: 960px) {
     margin-top: 0;
@@ -152,11 +154,11 @@ export const NavMenu = styled.ul`
     position: fixed;
     padding-top: 30%;
     top: 0;
-    right: 0;
+    right: ;
     opacity: ${({ show }) => (show ? 1 : 0)};
     visibility: ${({ show }) => (show ? "visible" : "hidden")};
-    transform: translateY(${({ show }) => (show ? "0" : "-10px")});
-    transition: opacity 0.5s ease;
+    transform: translateY(${({ show }) => (show ? "0" : "-5px")});
+    transition: opacity 0.1s ease;
     background-color: #071c2f;
   }
 `;
@@ -209,7 +211,7 @@ export const NavLinks = styled.span`
   transition: all 0.3s ease;
   &:hover {
     ${({ btn }) =>
-      btn ? `transform: scale(1.1)` : `text-shadow: 1px 1px 4px #000;`}
+      btn ? `transform: scale(1.1)` : `text-shadow: 6px 6px 5px #95D2B3;`}
   }
 
   @media screen and (max-width: 960px) {

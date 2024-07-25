@@ -1,0 +1,8 @@
+body{
+    background-image: url('../public/undraw_things_to_say_re_jpcg.svg');
+    background-size: 63% auto; /* Adjust as needed */
+    background-repeat: no-repeat;
+    background-position: calc(160% - 8%) 84%;
+    background-color: rgba(255, 255, 255, 0.267); /* Adjust opacity (last value) */
+    background-blend-mode: lighten; /* Adjust blend mode as needed */
+}

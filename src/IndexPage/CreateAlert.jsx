@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react";
-import "./Dashboard.css";
+import "../components/Dashboard/Dashboard.css";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import Alert from "../../alert/Alert";
+import Alert from "../alert/Alert.jsx";
 import {
   useCreateAlertMutation,
-} from "../../services/alertAuthApi";
-import { useGetAlertsQuery } from "../../services/alertAuthApi";
+} from "../services/alertAuthApi.js";
+import { useGetAlertsQuery } from "../services/alertAuthApi.js";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
-function Dashboard() {
+function CreateAlert() {
   const selectedAlertType = [
     "Driving Licence Expiry",
     "Fitness Expiry",
@@ -82,24 +82,15 @@ function Dashboard() {
 
   return (
     <>
-      <div className="container my-5 pt-5">
-        <div className="card w-100 shadow border-0 my-5">
-          <div className="card-header shadow alert-bg-colour">
-            <div className="alert" role="alert">
-              <span className="">
-                Note :- Create alert with required details and relyNrelax will
-                notify you on selected reminder date via call, whatsapp or sms,
-                email, etc.
-              </span>
-            </div>
-          </div>
-          <div className="card-body my-4 border-0">
+      <div className="container mb-4">
+        <div className="card w-100 shadow-sm border-0 ">
+          <div className="card-body border-0">
             <div className="row">
-              <div className="col-lg-8">
+              <div className="col-lg-7">
                 <div className="alert alert-secondary">Your Alert Lists</div>
                 <Alert allAlert={allAlerts} onDelete={handleDelete} />
               </div>
-              <div className="col-lg-4">
+              <div className="col-lg-5">
                 <div className="alert alert-secondary">Create Alert</div>
                 <div className="container">
                   <select
@@ -170,4 +161,4 @@ function Dashboard() {
   );
 }
 
-export default Dashboard;
+export default CreateAlert;

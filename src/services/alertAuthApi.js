@@ -5,6 +5,7 @@ export const alertAuthApi = createApi({
 
   baseQuery: fetchBaseQuery({
     baseUrl: `https://apis.relynrelax.com/api/alert`,
+    // baseUrl: `http://localhost:5001/api/alert`,
   }),
 
   endpoints: (builder) => ({

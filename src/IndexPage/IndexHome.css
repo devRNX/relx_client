@@ -1,0 +1,62 @@
+.logoImg1 {
+    width: 7rem;
+}
+.mainText {
+    text-align: center;
+}
+
+.urlLink {
+    margin-left: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background-color: #bce8d2;
+    text-decoration: underline;
+    text-decoration-color: #F1F8E8;
+}
+.dataCards {
+    margin-left: 10rem;
+}
+
+.infoT {
+    text-align: center;
+}
+
+.infoText2 {
+    margin-left: 3rem;
+    font-weight: lighter;
+    font-size: small;
+    margin-top: 5px;
+}
+.infoText1 {
+    margin-left: 3rem;
+    font-weight: bold;
+
+}
+/* 
+.card-hover-effect {
+    transition: transform 0.5s cubic-bezier(0.30, 0.11, 0.2, 10), background-color 0.6s ease;  
+    transform: scale(1); 
+}
+
+.card-hover:hover {
+    background-color: #dff5ea;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+
+} */
+
+.custom-card {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth transition for transform and box-shadow */
+    cursor: pointer;
+}
+  
+.custom-card:hover {
+    background-color: #dff5ea;
+    transform: scale(1.05); /* Scale up the card on hover */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
+}
+
+.bgColor{
+    background-color: #dff5ea;
+}
+  
