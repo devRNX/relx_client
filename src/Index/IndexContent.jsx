@@ -24,7 +24,7 @@ function IndexContent() {
           </h1>
         </div>
         <p class="text-center fw-normal my-2 fs-6">The platform that provides you
-          reminder for the important dates like vehicle's <br></br> <span className='urlLink mt-3'> <b>PUCC</b> expiry,
+          reminder for the important dates like vehicle's <br></br> <span className='mt-3'> <b>PUCC</b> expiry,
           <b>Fitness</b> expiry, <b>RC</b> expiry and many more <b>....</b> </span> </p>
 
         <div class="container text-center my-3 py-5">
