@@ -20,7 +20,7 @@ function IndexContent() {
         <img src={logo2} className='rounded mx-auto d-block logoImg1' alt='img'/>
         <div className="mainText mt-5">
           <h1 className='fw-regular'>Welcome To
-            <span className='urlLink'>relynrelax.com </span> 
+            <span className=''>relynrelax.com </span> 
           </h1>
         </div>
         <p class="text-center fw-normal my-2 fs-6">The platform that provides you
