@@ -15,11 +15,8 @@ function IndexHome() {
     <div className='my-5'>
         <img src={logo2} className='rounded mx-auto d-block logoImg1' alt='img'/>
       <div className="container my-5 mainText">
-        <h1 className='fw-regular'>Welcome To
-          <span className='urlLink'>relynrelax.com </span> 
-        </h1>
+        <h1 className='fw-regular'>Rely on us and Relax ..</h1>
         <span>
-          
           Set a reminder with us at RelyNRelax, and we'll notify you on your chosen date <br></br> 
           <span className='urlLink'>via call, WhatsApp, SMS, or Email.</span>
         </span>
