@@ -21,11 +21,17 @@ function NavbarNew() {
     <div className='container my-3'>
         <ul class="nav justify-content-center">
             {
-                !tokens ? <>
+                !tokens ? 
+                <>
                     <li class="nav-item me-4">
                         <Link class="nav-link text-success fw-semibold" aria-current="page" to="/">Home</Link>
                     </li>
-                </> : ""
+                </> : 
+                <>
+                <li class="nav-item me-4">
+                    <Link class="nav-link text-success fw-semibold" aria-current="page" to="/dashboard">Home</Link>
+                </li>
+            </>
             }
             <li class="nav-item me-4">
                 <Link class="nav-link text-success fw-semibold" aria-current="page" to="/alerts">{tokens ? 'Create Alert' : 'About Us'}</Link>
