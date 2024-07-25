@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { getToken } from "../../services/localStorage";
+import { Link } from "react-router-dom";
 
 
 function NavbarNew() {
@@ -22,12 +23,12 @@ function NavbarNew() {
             {
                 !tokens ? <>
                     <li class="nav-item me-4">
-                        <a class="nav-link text-success fw-semibold" aria-current="page" href="#create">Home</a>
+                        <Link class="nav-link text-success fw-semibold" aria-current="page" to="/">Home</Link>
                     </li>
                 </> : ""
             }
             <li class="nav-item me-4">
-                <a class="nav-link text-success fw-semibold" aria-current="page" href="#create">{tokens ? 'Create Alert' : 'About Us'}</a>
+                <Link class="nav-link text-success fw-semibold" aria-current="page" to="/alerts">{tokens ? 'Create Alert' : 'About Us'}</Link>
             </li>
             <li class="nav-item me-4">
                 <a class="nav-link text-success fw-semibold" href="#link">{tokens ? 'Your Details' : 'Services'}</a>
