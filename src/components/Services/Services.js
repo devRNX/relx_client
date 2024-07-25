@@ -13,7 +13,7 @@ export default function Services() {
   return (
     <Container mt="3rem" id='services'>
       <ServiceText>
-        <ServicesHeader>Services</ServicesHeader>
+        <ServicesHeader> Our Services</ServicesHeader>
         <ServiceDescription>
           The complete toolkit to turn one-time browsers into long-term
           customers.

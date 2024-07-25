@@ -12,7 +12,7 @@ import {
 export default function ServiceCard({ data }) {
   return (
     data && (
-      <ServiceCardContent bg={data.background}>
+      <ServiceCardContent className="shadow-sm" bg={data.background}>
         <ServiceCardIcon>
           <ServiceImg src={data.icon}/>
         </ServiceCardIcon>

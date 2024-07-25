@@ -27,6 +27,7 @@ const Signin = () => {
         setLoading(false);
         localStorage.setItem("token", response.data.token);
         navigate("/dashboard");
+        window.location.reload();
       } else {
         setLoading(false);
         const msg = response.data.message;

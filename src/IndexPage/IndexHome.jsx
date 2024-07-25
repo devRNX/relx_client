@@ -1,18 +1,19 @@
 import CreateAlert from './CreateAlert'
 import './IndexHome.css'
 import { useNavigate } from 'react-router-dom'
+import logo2 from '../assets/png/logo.png'
 
 
 function IndexHome() {
 
   const navigate = useNavigate()
-
   const handleClickTab = (tab) => {
     navigate('/alerts')
   }
 
   return (
-    <div className='my-5 pt-5'>
+    <div className='my-5'>
+        <img src={logo2} className='rounded mx-auto d-block logoImg1' alt='img'/>
       <div className="container my-5 mainText">
         <h1 className='fw-regular'>Welcome To
           <span className='urlLink'>relynrelax.com </span> 
@@ -33,7 +34,7 @@ function IndexHome() {
                <span className='infoText1'> Your Alerts </span>
               </div>
               <div className="mt-2 ">
-               <span className='infoText2 fw-light fst-italic'>Total Alerts :- 20</span>
+               <span className='infoText2 fw-light fst-italic'>Total Alerts :- 4</span>
               </div>
               <div className="">
                <span className='infoText2 fw-light fst-italic'>Pending :- 10</span>
