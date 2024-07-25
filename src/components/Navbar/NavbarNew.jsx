@@ -24,11 +24,7 @@ function NavbarNew() {
                     <li class="nav-item me-4">
                         <a class="nav-link text-success fw-semibold" aria-current="page" href="#create">Home</a>
                     </li>
-                </> : <>
-                    <li class="nav-item me-4">
-                        <a class="nav-link text-success fw-semibold" aria-current="page" href="#create"></a>
-                    </li>
-                </>
+                </> : ""
             }
             <li class="nav-item me-4">
                 <a class="nav-link text-success fw-semibold" aria-current="page" href="#create">{tokens ? 'Create Alert' : 'About Us'}</a>
