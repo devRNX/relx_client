@@ -34,10 +34,27 @@ function NavbarNew() {
             </>
             }
             <li class="nav-item me-4">
-                <Link class="nav-link text-success fw-semibold" aria-current="page" to="/alerts">{tokens ? 'Create Alert' : 'About Us'}</Link>
+                {
+                    token ? 
+                    <>
+                        <Link class="nav-link text-success fw-semibold" aria-current="page" to="/alerts">Create Alert</Link>
+                    </> : 
+                    <>
+                         <Link class="nav-link text-success fw-semibold" aria-current="page" to="/alerts">About Us</Link>
+                    </>
+                }
+                
             </li>
             <li class="nav-item me-4">
-                <a class="nav-link text-success fw-semibold" href="#link">{tokens ? 'Your Details' : 'Services'}</a>
+                {
+                    token ? 
+                    <>
+                        <Link class="nav-link text-success fw-semibold" aria-current="page" to="/details">Vehicle Details</Link>
+                    </> : 
+                    <>
+                         <Link class="nav-link text-success fw-semibold" aria-current="page" to="/alerts">Services</Link>
+                    </>
+                }
             </li>
             <li class="nav-item me-4">
                 <a class="nav-link text-success fw-semibold" href="#link">{tokens ? 'About Us' : 'Blogs'}</a>

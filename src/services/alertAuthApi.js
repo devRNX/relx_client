@@ -4,8 +4,8 @@ export const alertAuthApi = createApi({
   reducerPath: "alertAuthApi",
 
   baseQuery: fetchBaseQuery({
-    baseUrl: `https://apis.relynrelax.com/api/alert`,
-    // baseUrl: `http://localhost:5001/api/alert`,
+    // baseUrl: `https://apis.relynrelax.com/api/alert`,
+    baseUrl: `http://localhost:5001/api/alert`,
   }),
 
   endpoints: (builder) => ({
@@ -18,6 +18,16 @@ export const alertAuthApi = createApi({
           authorization: `Bearer ${token}`,
         },
       }),
+    }),
+
+    details: builder.query({
+      query: (token) => ({
+        url: "/details",
+        method: "GET",
+        headers: {
+          authorization: `Bearer ${token}`,
+        },
+      })
     }),
 
     getAlerts: builder.query({
@@ -59,4 +69,5 @@ export const {
   useGetAlertsQuery,
   useDeleteAlertMutation,
   useSendAlertsMutation,
+  useDetailsQuery
 } = alertAuthApi;

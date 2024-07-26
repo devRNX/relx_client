@@ -59,4 +59,26 @@
 .bgColor{
     background-color: #dff5ea;
 }
+.background-image {
+    position: relative;
+    overflow: hidden; /* Ensure content does not overflow the container */
+}
+
+.background-image::before {
+    content: '';
+    position: absolute;
+    top: 15%;
+    left: 20%;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../public/undraw_automobile_repair_ywci.svg');
+    background-size: 63% auto;
+    background-repeat: no-repeat;
+    background-position: right top; /* Adjust as needed */
+    background-color: rgba(255, 255, 255, 0.267);
+    background-blend-mode: lighten;
+    opacity: 0.5; /* Adjust this value to control opacity */
+    z-index: -1; /* Ensure this is behind your content */
+}
+
   
