@@ -1,10 +1,15 @@
-import React from 'react'
-import './spinner.css'
+import React from 'react';
+import './spinner.css';
 
 function Spinner() {
   return (
-    <div class="lds-ripple mx-auto"><div></div><div></div></div>
-  )
+    <div className="spinner-container">
+      <div className="lds-ripple">
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  );
 }
 
-export default Spinner
+export default Spinner;
