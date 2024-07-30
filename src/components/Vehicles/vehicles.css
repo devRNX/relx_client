@@ -1,0 +1,43 @@
+.editTag {
+    margin-left: 20rem;
+}
+
+.v_background {
+    position: relative;
+    overflow: hidden;
+}
+.v_background::before {
+    content: '';
+    position: absolute;
+    top: 15%;
+    left: -1%;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../../public/undraw_traveling_yhxq.svg');
+    background-size: 50% auto;
+    background-repeat: no-repeat;
+    background-position: right top; /* Adjust as needed */
+    background-color: rgba(255, 255, 255, 0.267);
+    background-blend-mode: lighten;
+    opacity: 0.2; /* Adjust this value to control opacity */
+    z-index: -1; /* Ensure this is behind your content */
+}
+
+.custom-card {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth transition for transform and box-shadow */
+    cursor: pointer;
+}
+  
+.custom-card:hover {
+    background-color: #dff5ea;
+    transform: scale(1.05); /* Scale up the card on hover */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
+}
+
+.v_card{
+    margin-top: 1.5rem;
+}
+
+.btn-add {
+    margin-left: 2rem;
+}

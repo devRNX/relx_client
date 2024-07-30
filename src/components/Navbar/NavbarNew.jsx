@@ -24,28 +24,45 @@ function NavbarNew() {
                 !tokens ? 
                 <>
                     <li class="nav-item me-4">
-                        <Link class="nav-link text-success fw-semibold" aria-current="page" to="/">Home</Link>
+                        <Link class="nav-link text-success fw-medium" aria-current="page" to="/">Home</Link>
                     </li>
                 </> : 
                 <>
                 <li class="nav-item me-4">
-                    <Link class="nav-link text-success fw-semibold" aria-current="page" to="/dashboard">Home</Link>
+                    <Link class="nav-link text-success fw-medium" aria-current="page" to="/dashboard">Home</Link>
                 </li>
             </>
             }
             <li class="nav-item me-4">
-                <Link class="nav-link text-success fw-semibold" aria-current="page" to="/alerts">{tokens ? 'Create Alert' : 'About Us'}</Link>
+                {
+                    token ? 
+                    <>
+                        <Link class="nav-link text-success fw-medium" aria-current="page" to="/alerts">Create Alert</Link>
+                    </> : 
+                    <>
+                         <Link class="nav-link text-success fw-medium" aria-current="page" to="/alerts">About Us</Link>
+                    </>
+                }
+                
             </li>
             <li class="nav-item me-4">
-                <a class="nav-link text-success fw-semibold" href="#link">{tokens ? 'Your Details' : 'Services'}</a>
+                {
+                    token ? 
+                    <>
+                        <Link class="nav-link text-success fw-medium" aria-current="page" to="/edit">Vehicle Details</Link>
+                    </> : 
+                    <>
+                         <Link class="nav-link text-success fw-medium" aria-current="page" to="/alerts">Services</Link>
+                    </>
+                }
             </li>
             <li class="nav-item me-4">
-                <a class="nav-link text-success fw-semibold" href="#link">{tokens ? 'About Us' : 'Blogs'}</a>
+                <a class="nav-link text-success fw-medium" href="#link">{tokens ? 'About Us' : 'Blogs'}</a>
             </li>
             {
                 token ? <>
                     <li class="nav-item me-4">
-                        <a class="nav-link text-success fw-semibold" aria-current="page" href="#signOut"  onClick={handleSignOut}>Sign Out</a>
+                        <a class="nav-link text-success fw-medium" aria-current="page" href="#signOut"  onClick={handleSignOut}>Sign Out</a>
                     </li>
                 </> : ''
             }

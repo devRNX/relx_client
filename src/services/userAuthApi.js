@@ -83,6 +83,29 @@ export const userAuthApi = createApi({
         },
       }),
     }),
+
+    editVehicle: builder.mutation({
+      query: ({token, data}) => ({
+        url: "/vehicle",
+        method: "PATCH",
+        body: data,
+        headers: {
+          "Content-Type": "application/json",
+          authorization: `Bearer ${token}`
+        },
+      })
+    }),
+
+    getVehicle: builder.query({
+      query: (token) => ({
+        url: "/get/vehicle",
+        method: "GET",
+        headers: {
+          authorization: `Bearer ${token}`
+        }
+      })
+    })
+
   }),
 });
 
@@ -94,4 +117,6 @@ export const {
   useLogInAdminMutation,
   useGetAllAlertsQuery,
   useGetAllUsersQuery,
+  useEditVehicleMutation,
+  useGetVehicleQuery
 } = userAuthApi;

@@ -20,6 +20,16 @@ export const alertAuthApi = createApi({
       }),
     }),
 
+    details: builder.query({
+      query: (token) => ({
+        url: "/details",
+        method: "GET",
+        headers: {
+          authorization: `Bearer ${token}`,
+        },
+      })
+    }),
+
     getAlerts: builder.query({
       query: (token) => ({
         url: "/get/alert",
@@ -31,11 +41,12 @@ export const alertAuthApi = createApi({
     }),
 
     deleteAlert: builder.mutation({
-      query: ({ id, token }) => ({
-        url: `/delete/alert/${id}`,
+      query: ({ id }) => ({
+        url: `/delete`,
         method: "DELETE",
+        body: id,
         headers: {
-          authorization: `Bearer ${token}`,
+          "content-type": "application/json",
         },
       }),
     }),
@@ -59,4 +70,5 @@ export const {
   useGetAlertsQuery,
   useDeleteAlertMutation,
   useSendAlertsMutation,
+  useDetailsQuery
 } = alertAuthApi;
