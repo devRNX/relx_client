@@ -22,7 +22,7 @@
 }
 
 .infoText2 {
-    margin-left: 3rem;
+    margin-left: 2rem;
     font-weight: lighter;
     font-size: small;
     margin-top: 5px;
@@ -62,6 +62,9 @@
 .background-image {
     position: relative;
     overflow: hidden; /* Ensure content does not overflow the container */
+}
+.vehicle-item {
+    margin-left: 20px; /* Adjust the margin value as needed */
 }
 
 .background-image::before {

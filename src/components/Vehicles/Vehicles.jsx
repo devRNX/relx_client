@@ -1,69 +1,79 @@
+import './vehicles.css'
 import { useNavigate } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
-import { useDetailsQuery } from '../../services/alertAuthApi';
+import { useGetVehicleQuery } from '../../services/userAuthApi';
 
 function Vehicles() {
     const navigate = useNavigate();
-    const [userData, setUserData] = useState(null);
+    const [vehicleData, setVehicleData] = useState(null);
     const token = localStorage.getItem("token");
-    const { data, isSuccess } = useDetailsQuery(token);
+    const { data, isSuccess } = useGetVehicleQuery(token);
+
     useEffect(() => {
-        if (isSuccess && data.u_data && data.u_data.length > 0) {
-            setUserData(data.u_data[0]);
+        if (isSuccess) {
+            setVehicleData(data.data);
         }
     }, [data, isSuccess]);
-
-    if (!userData) {
-        return <div>Loading...</div>;
-    }
-
-    const vNumbers = userData.v_number ? userData.v_number.split(', ') : [];
-
+    
     const handleVnumbers = () => {
         navigate('/details');
     }
 
     return (
         <div className='container mb-4'>
-            {vNumbers.length > 0 ? (
-                <div className="row">
-                    {/* First Column */}
-                    <div className="col-md-6">
-                        {vNumbers.slice(0, Math.ceil(vNumbers.length / 2)).map((v_num, index) => (
-                            <div key={index} className="card shadow-sm custom-card mb-3" onClick={handleVnumbers}>
-                                <div className="card-body">
-                                    <div className="row">
-                                        <div className="col">
-                                            <h5 className="card-title">{v_num}</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-
-                    {/* Second Column */}
-                    <div className="col-md-6">
-                        {vNumbers.slice(Math.ceil(vNumbers.length / 2)).map((v_num, index) => (
-                            <div key={index + Math.ceil(vNumbers.length / 2)} className="card shadow-sm custom-card mb-3" onClick={handleVnumbers}>
-                                <div className="card-body">
-                                    <div className="row">
-                                        <div className="col">
-                                            <h5 className="card-title">{v_num}</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            ) : (
-                <div className="card">
-                    <div className="card-title">No Vehicles Found.</div>
-                </div>
-            )}
-            <div class="d-grid gap-2 mt-3">
-                <button class="btn custom-card border-secondary-subtle shadow-sm" onClick={handleVnumbers} type="button">Edit or Add Vehicle Numbers</button>
+            <table className="table table-success">
+                <thead>
+                    <tr>
+                        <th scope="col">SL Number</th>
+                        <th scope="col">Vehicle Number</th>
+                        <th scope="col">Edit</th>
+                        <th scope="col">Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {vehicleData && vehicleData.map((vehicle, index) => (
+                        <tr key={vehicle._id}>
+                            <td>{index + 1}</td>
+                            <td>{vehicle.v_number}</td>
+                            <td>
+                                <button className="btn btnColor" onClick={() => navigate(`/edit/${vehicle._id}`)}>
+                                    <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="19"
+                                    height="19"
+                                    fill="currentColor"
+                                    className="bi bi-pencil-square"
+                                    viewBox="0 0 16 16"
+                                    >
+                                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                                    <path
+                                        fillRule="evenodd"
+                                        d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"
+                                    />
+                                    </svg>
+                                </button>
+                            </td>
+                            <td>
+                                <button className="btn" onClick={() => console.log('Delete', vehicle._id)}>
+                                    <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="19"
+                                    height="19"
+                                    fill="currentColor"
+                                    className="bi bi-trash"
+                                    viewBox="0 0 16 16"
+                                    >
+                                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z" />
+                                    <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z" />
+                                    </svg>
+                                </button>
+                            </td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+            <div className="d-grid gap-2 mt-3">
+                <button className="btn custom-card border-secondary-subtle shadow-sm" onClick={handleVnumbers} type="button">Edit or Add Vehicle Numbers</button>
             </div>
         </div>
     );

@@ -2,32 +2,38 @@ import CreateAlert from './CreateAlert'
 import './IndexHome.css'
 import { useNavigate } from 'react-router-dom'
 import logo2 from '../assets/png/logo.png'
-import { useDetailsQuery } from '../services/alertAuthApi'
 import { useState, useEffect } from 'react'
 import Vehicles from '../components/Vehicles/Vehicles'
+import { useGetVehicleQuery } from '../services/userAuthApi';
+import Spinner from '../Spinner/Spinner'
 
 function IndexHome() {
   const navigate = useNavigate()
 
-  const [details, setDetails] = useState(null);
+  const [details, setDetails] = useState([]);
   const [activeTab, setActiveTab] = useState('createA')
   const token = localStorage.getItem("token");
-  const { data, isSuccess } = useDetailsQuery(token);
+  const { data, isSuccess, isLoading } = useGetVehicleQuery(token);
 
   useEffect(() => {
     if (isSuccess) {
-      setDetails(data);
+      setDetails(data.data);
     }
   }, [data, isSuccess]);
-
+  if (isLoading) {
+    return <Spinner />;
+  }
   const a_count = details?.a_count || 0;
   const sCount = details?.sCount || 0;
   const u_data = details?.u_data || [];
   const user_data = u_data[0] || {};
-  const vehicleNumbers = user_data.v_number ? user_data.v_number.split(',').map(num => num.trim()) : [];
 
   const handleClickTab = (tab) => {
     navigate('/alerts');
+  }
+
+  const vehicleList = () => {
+    navigate('/edit')
   }
 
   return (
@@ -56,26 +62,22 @@ function IndexHome() {
                <span className='infoText2 fw-light fst-italic'>Pending :- {a_count - sCount}</span>
               </div>
               <div className="mb-4">
-               <span className='infoText2 fw-light fst-italic'>Sent :- {sCount}</span>
+               <span className='infoText2 fw-light fst-italic'>Received :- {sCount}</span>
               </div>
             </div>
           </div>
           <div className="col-lg-6">
-              <div className="card rounded-4 border-success-subtle shadow custom-card" onClick={handleClickTab}>
+              <div className="card rounded-4 border-success-subtle shadow custom-card" onClick={vehicleList}>
                 <div className="mt-3">
                 <span className='infoText1'> Registered Vehicles </span>
                 </div>
-                <ul className='list-unstyled'>
-                  {vehicleNumbers.length > 0 ? (
-                      <>
-                        {vehicleNumbers.map((number, index) => (
-                          <li key={index} className='infoText2 fw-light fst-italic'>{number}</li>
-                        ))}
-                      </>
-                      ) : (
-                        <span className='infoText2 fw-light fst-italic'>No vehicles registered</span>
-                  )}
-                </ul>
+                <div className='my-1'>
+                  {details.slice(0, 4).map(vehicle => (
+                    <div key={vehicle._id} className="vehicle-item">
+                      <span className='infoText2 fw-light fst-italic'>{vehicle.v_number}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
           </div>
         </div>

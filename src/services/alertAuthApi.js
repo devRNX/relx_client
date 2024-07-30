@@ -4,8 +4,8 @@ export const alertAuthApi = createApi({
   reducerPath: "alertAuthApi",
 
   baseQuery: fetchBaseQuery({
-    // baseUrl: `https://apis.relynrelax.com/api/alert`,
-    baseUrl: `http://localhost:5001/api/alert`,
+    baseUrl: `https://apis.relynrelax.com/api/alert`,
+    // baseUrl: `http://localhost:5001/api/alert`,
   }),
 
   endpoints: (builder) => ({
@@ -41,11 +41,12 @@ export const alertAuthApi = createApi({
     }),
 
     deleteAlert: builder.mutation({
-      query: ({ id, token }) => ({
-        url: `/delete/alert/${id}`,
+      query: ({ id }) => ({
+        url: `/delete`,
         method: "DELETE",
+        body: id,
         headers: {
-          authorization: `Bearer ${token}`,
+          "content-type": "application/json",
         },
       }),
     }),

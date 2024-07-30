@@ -17,7 +17,7 @@ import IndexHome from "./IndexPage/IndexHome";
 import './app.css';
 import Index from "./Index/Index";
 import NavbarNew from "./components/Navbar/NavbarNew";
-import Details from "./components/Details/Details";
+import VechiclesDetails from "./components/Vehicles/VechiclesDetails";
 
 function App() {
   const [token, setToken] = useState(() => getToken());
@@ -47,7 +47,7 @@ function App() {
         <Route path={"/admin/dashboard"} exact element={<AdminDashboard />} />
         <Route path="/dashboard" element={<IndexHome />} />
         <Route path="/alerts" element={<Dashboard />} />
-        <Route path="/details" element={<Details/>} />
+        <Route path={"/edit/:v_id?"} element={<VechiclesDetails/>} />
       </Routes>
         <Footer/>
     </BrowserRouter>

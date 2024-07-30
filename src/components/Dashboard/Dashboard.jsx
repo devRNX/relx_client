@@ -6,6 +6,7 @@ import Alert from "../../alert/Alert";
 import {
   useCreateAlertMutation,
 } from "../../services/alertAuthApi";
+import logo2 from "../../assets/png/logo.png"
 import { useGetAlertsQuery } from "../../services/alertAuthApi";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
@@ -82,7 +83,10 @@ function Dashboard() {
 
   return (
     <>
-      <div className="container my-5 pt-5">
+      <div className="container my-5">
+      <img src={logo2} className='rounded mx-auto d-block logoImg1' alt='img'/>
+      <p className="text-center mb-1 v_card fw-semibold">Your Alerts Details</p>
+      <p className="text-center mb-5">You can Add or Delete your Alerts details...</p>
         <div className="card w-100 shadow border-0 my-5">
           <div className="card-header shadow alert-bg-colour">
             <div className="alert" role="alert">
