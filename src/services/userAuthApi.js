@@ -105,6 +105,29 @@ export const userAuthApi = createApi({
         },
       }),
     }),
+
+    addVehicle: builder.mutation({
+      query: ({ token, data }) => ({
+        url: "/vehicle",
+        method: "POST",
+        body: data,
+        headers: {
+          "Content-Type": "application/json",
+          authorization: `Bearer ${token}`,
+        },
+      }),
+    }),
+
+    deleteVehicle: builder.mutation({
+      query: ({ token, id }) => ({
+        url: `/vehicle/${id}`,
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          authorization: `Bearer ${token}`,
+        },
+      }),
+    }),
   }),
 });
 
@@ -118,4 +141,6 @@ export const {
   useGetAllUsersQuery,
   useEditVehicleMutation,
   useGetVehicleQuery,
+  useAddVehicleMutation,
+  useDeleteVehicleMutation,
 } = userAuthApi;

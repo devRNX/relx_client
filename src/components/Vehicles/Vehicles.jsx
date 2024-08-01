@@ -1,13 +1,18 @@
 import "./vehicles.css";
 import { useNavigate } from "react-router-dom";
 import React, { useState, useEffect } from "react";
-import { useGetVehicleQuery } from "../../services/userAuthApi";
+import {
+  useDeleteVehicleMutation,
+  useGetVehicleQuery,
+} from "../../services/userAuthApi";
 
 function Vehicles() {
   const navigate = useNavigate();
   const [vehicleData, setVehicleData] = useState(null);
   const token = localStorage.getItem("token");
   const { data, isSuccess } = useGetVehicleQuery(token);
+  const [deleteVehicle] = useDeleteVehicleMutation();
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     if (isSuccess) {
@@ -17,6 +22,28 @@ function Vehicles() {
 
   const handleVnumbers = () => {
     navigate("/add-vehicle");
+  };
+
+  const handleDelete = async (id) => {
+    setLoading(true);
+    try {
+      const response = await deleteVehicle({
+        token,
+        id,
+      });
+      if (response.data?.status === true) {
+        toast.success("Vehicle deleted successfully");
+        window.location.reload();
+      } else {
+        toast.error(
+          response.data?.message || "Fail to delete vehicle. Please try again"
+        );
+      }
+    } catch (error) {
+      toast.error("An error occurred ");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -60,7 +87,8 @@ function Vehicles() {
                 <td>
                   <button
                     className="btn"
-                    onClick={() => console.log("Delete", vehicle._id)}
+                    onClick={() => handleDelete(vehicle._id)}
+                    disabled={loading}
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

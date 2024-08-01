@@ -3,6 +3,7 @@ import React from "react";
 const Footer = () => {
   return (
     <footer
+      id="footer"
       className="py-5"
       style={{
         backgroundColor: "#bce8d2",

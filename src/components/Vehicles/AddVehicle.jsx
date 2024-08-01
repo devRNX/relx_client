@@ -1,14 +1,40 @@
 import React, { useState } from "react";
-import { useHistory, useNavigate } from "react-router-dom"; // Assuming you are using react-router-dom for navigation
+import { useNavigate } from "react-router-dom";
+import {
+  useAddVehicleMutation,
+  useGetVehicleQuery,
+} from "../../services/userAuthApi";
+import { toast } from "react-toastify";
 
 const AddVehicle = () => {
   const [vehicleNumber, setVehicleNumber] = useState("");
-
   const navigate = useNavigate();
+  const token = localStorage.getItem("token");
+  const { data, isSuccess, isLoading } = useGetVehicleQuery(token);
+  const [addVehicle] = useAddVehicleMutation();
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Add your form submission logic here
+    setLoading(true);
+    try {
+      const response = await addVehicle({
+        token,
+        data: { v_number: vehicleNumber },
+      });
+      if (response.data?.status === true) {
+        toast.success("Vehicle added successfully");
+        navigate("/dashboard");
+      } else {
+        toast.error(
+          response.data?.message || "Fail to add vehicle. Please try again"
+        );
+      }
+    } catch (error) {
+      toast.error("An error occurred ");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleGoBack = () => {
@@ -52,7 +78,11 @@ const AddVehicle = () => {
                     >
                       Go Back
                     </button>
-                    <button type="submit" className="btn btn-primary btn-block">
+                    <button
+                      type="submit"
+                      className="btn btn-primary btn-block"
+                      disabled={loading}
+                    >
                       Submit
                     </button>
                   </div>
