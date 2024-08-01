@@ -1,17 +1,17 @@
 import "./IndexHome.css";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import logo2 from "../assets/png/logo.png";
 import { useState, useEffect } from "react";
-import VechiclesDetails from "../components/Vehicles/VechiclesDetails";
+// import VechiclesDetails from "../components/Vehicles/VechiclesDetails";
 import Vehicles from "../components/Vehicles/Vehicles";
 import { useGetVehicleQuery } from "../services/userAuthApi";
 import Spinner from "../Spinner/Spinner";
 
 function IndexHomeNew() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const [details, setDetails] = useState([]);
-  const [activeTab, setActiveTab] = useState("vehicles");
+  // const [activeTab, setActiveTab] = useState("vehicles");
   const token = localStorage.getItem("token");
   const { data, isSuccess, isLoading } = useGetVehicleQuery(token);
 
@@ -23,8 +23,8 @@ function IndexHomeNew() {
   if (isLoading) {
     return <Spinner />;
   }
-  const a_count = details?.a_count || 0;
-  const sCount = details?.sCount || 0;
+  // const a_count = details?.a_count || 0;
+  // const sCount = details?.sCount || 0;
   const u_data = details?.u_data || [];
   const user_data = u_data[0] || {};
 

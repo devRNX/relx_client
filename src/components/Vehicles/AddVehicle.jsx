@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   useAddVehicleMutation,
-  useGetVehicleQuery,
+  // useGetVehicleQuery,
 } from "../../services/userAuthApi";
 import { toast } from "react-toastify";
 
@@ -10,7 +10,7 @@ const AddVehicle = () => {
   const [vehicleNumber, setVehicleNumber] = useState("");
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
-  const { data, isSuccess, isLoading } = useGetVehicleQuery(token);
+  // const { data, isSuccess, isLoading } = useGetVehicleQuery(token);
   const [addVehicle] = useAddVehicleMutation();
   const [loading, setLoading] = useState(false);
 

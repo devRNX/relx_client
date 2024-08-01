@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { getToken } from "../../services/localStorage";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function NavbarNew() {
   const [tokens, setTokens] = useState(getToken);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   useEffect(() => {
     const newToken = getToken();
     if (newToken) {
