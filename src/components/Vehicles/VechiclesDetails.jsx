@@ -107,7 +107,20 @@ function VehiclesDetails() {
   }
 
   if (!vData || vData.length === 0) {
-    return <div>No vehicle data available.</div>;
+    return (
+      <div className="container">
+        No vehicle data available.
+        <div className="d-flex justify-content-start my-3">
+          <button
+            className="btn btn-outline-primary"
+            type="button"
+            onClick={() => navigate("/add-vehicle")}
+          >
+            Add Vehicle Number
+          </button>
+        </div>
+      </div>
+    );
   }
 
   const itemsPerPage = 9;
