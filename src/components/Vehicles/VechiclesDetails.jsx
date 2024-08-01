@@ -259,7 +259,7 @@ function VehiclesDetails() {
         </Modal.Header>
         <Modal.Body>
           {selectedVehicle && (
-            <form onSubmit={handleSubmit} className="mt-3">
+            <div className="mt-3 d-flex flex-column">
               <input
                 type="hidden"
                 name="id"
@@ -272,7 +272,7 @@ function VehiclesDetails() {
                 </label>
                 <input
                   type="text"
-                  className="form-control"
+                  className="form-control custom-input"
                   id="vehicleNumber"
                   name="vehicleNumber"
                   value={alertData.vehicleNumber}
@@ -286,7 +286,7 @@ function VehiclesDetails() {
                 </label>
                 <input
                   type="date"
-                  className="form-control"
+                  className="form-control custom-input"
                   id="alertDate"
                   name="alertDate"
                   value={alertData.alertDate}
@@ -299,7 +299,7 @@ function VehiclesDetails() {
                   <strong>Select Alert Type:</strong>
                 </label>
                 <select
-                  className="form-control"
+                  className="form-control custom-input"
                   id="alertType"
                   name="alertType"
                   value={alertData.alertType}
@@ -320,7 +320,7 @@ function VehiclesDetails() {
                 </label>
                 <input
                   type="text"
-                  className="form-control"
+                  className="form-control custom-input"
                   id="alertName"
                   name="alertName"
                   value={alertData.alertName}
@@ -329,10 +329,10 @@ function VehiclesDetails() {
                   required
                 />
               </div>
-              <button type="submit" className="btn btn-primary w-100">
+              <button type="submit" className="btn btn-primary w-50">
                 Submit
               </button>
-            </form>
+            </div>
           )}
         </Modal.Body>
         <Modal.Footer>
