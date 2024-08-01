@@ -11,7 +11,6 @@ const AddVehicle = () => {
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
   // const { data, isSuccess, isLoading } = useGetVehicleQuery(token);
-  const [addVehicle] = useAddVehicleMutation();
   const [loading, setLoading] = useState(false);
   const [addVehicle] = useAddVehicleMutation();
 
