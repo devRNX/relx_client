@@ -155,7 +155,17 @@ function VehiclesDetails() {
         {/* <p className="text-center mb-5">
           You can Add or Modify your Vehicle details...
         </p> */}
+
         <div className="container">
+          <div className="d-flex justify-content-start my-3">
+            <button
+              className="btn btn-outline-primary"
+              type="button"
+              onClick={() => navigate("/add-vehicle")}
+            >
+              Add Vehicle Number
+            </button>
+          </div>
           <div className="row">
             {paginatedData.map((vehicle) => (
               <div key={vehicle._id} className={`col-md-4 mb-5`}>
@@ -225,15 +235,6 @@ function VehiclesDetails() {
                 )}
               </div>
             </div>
-          </div>
-          <div className="d-flex justify-content-center my-3">
-            <button
-              className="btn btn-outline-primary"
-              type="button"
-              onClick={() => navigate("/add-vehicle")}
-            >
-              Add Vehicle Number
-            </button>
           </div>
         </div>
       </div>
