@@ -43,7 +43,8 @@ function IndexHomeNew() {
       <div className="container w-50">
         <p className="my-4 infoT fs-5">Hello, {user_data.name || "User"}</p>
       </div>
-      <Vehicles />
+      {/* <Vehicles /> */}
+      <VechiclesDetails />
     </div>
   );
 }

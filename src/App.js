@@ -19,6 +19,7 @@ import Index from "./Index/Index";
 import NavbarNew from "./components/Navbar/NavbarNew";
 import VechiclesDetails from "./components/Vehicles/VechiclesDetails";
 import AddVehicle from "./components/Vehicles/AddVehicle";
+import EditVehicle from "./components/Vehicles/EditVehicle";
 
 function App() {
   const [token, setToken] = useState(() => getToken());
@@ -50,6 +51,7 @@ function App() {
         <Route path="/alerts" element={<Dashboard />} />
         <Route path={"/edit/:v_id?"} element={<VechiclesDetails />} />
         <Route path={"/add-vehicle"} element={<AddVehicle />} />
+        <Route path={"/edit-vehicle/:id"} element={<EditVehicle />} />
       </Routes>
       <Footer />
     </BrowserRouter>

@@ -28,7 +28,7 @@ function NavbarNew() {
   return (
     <div className="container my-3">
       <ul class="nav justify-content-around">
-        {!tokens ? (
+        {!token ? (
           <li class="nav-item">
             <Link
               class="nav-link text-success fw-medium"
