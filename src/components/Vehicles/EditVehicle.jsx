@@ -1,33 +1,36 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import {
-  useAddVehicleMutation,
-  // useGetVehicleQuery,
-} from "../../services/userAuthApi";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { useEditVehicleMutation } from "../../services/userAuthApi";
 import { toast } from "react-toastify";
 
-const AddVehicle = () => {
-  const [vehicleNumber, setVehicleNumber] = useState("");
+const EditVehicle = () => {
+  const params = useParams();
+  const location = useLocation();
+  const { id } = params;
+  const [vehicleNumber, setVehicleNumber] = useState(
+    location.state?.v_number || ""
+  );
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
-  // const { data, isSuccess, isLoading } = useGetVehicleQuery(token);
   const [loading, setLoading] = useState(false);
-  const [addVehicle] = useAddVehicleMutation();
+  const [editVehicle] = useEditVehicleMutation();
+
+  //   Change the submit according to api call
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     try {
-      const response = await addVehicle({
+      const response = await editVehicle({
         token,
-        data: { v_number: vehicleNumber },
+        data: { _id: id, v_number: vehicleNumber },
       });
       if (response.data?.status === true) {
-        toast.success("Vehicle added successfully");
+        toast.success("Vehicle updated successfully");
         navigate("/dashboard");
       } else {
         toast.error(
-          response.data?.message || "Fail to add vehicle. Please try again"
+          response.data?.message || "Fail to update vehicle. Please try again"
         );
       }
     } catch (error) {
@@ -51,7 +54,7 @@ const AddVehicle = () => {
           <div className="col-md-6 col-lg-5">
             <div className="card shadow-lg border-0 rounded-lg">
               <div className="card-body p-4">
-                <h1 className="text-center fw-bold mb-4">Add Vehicle</h1>
+                <h1 className="text-center fw-bold mb-4">Edit Vehicle</h1>
 
                 <form onSubmit={handleSubmit} className="mt-3">
                   <div className="form-group mb-3">
@@ -96,4 +99,4 @@ const AddVehicle = () => {
   );
 };
 
-export default AddVehicle;
+export default EditVehicle;

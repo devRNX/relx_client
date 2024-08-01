@@ -28,7 +28,7 @@ function NavbarNew() {
   return (
     <div className="container my-3">
       <ul class="nav justify-content-around">
-        {!tokens ? (
+        {!token ? (
           <li class="nav-item">
             <Link
               class="nav-link text-success fw-medium"
@@ -49,7 +49,7 @@ function NavbarNew() {
             </Link>
           </li>
         )}
-        {!token && (
+        {!token ? (
           <li class="nav-item">
             <Link
               class="nav-link text-success fw-medium"
@@ -57,6 +57,16 @@ function NavbarNew() {
               onClick={() => scrollTo("services")}
             >
               Services
+            </Link>
+          </li>
+        ) : (
+          <li class="nav-item">
+            <Link
+              class="nav-link text-success fw-medium"
+              aria-current="page"
+              to="/alerts"
+            >
+              Alerts
             </Link>
           </li>
         )}

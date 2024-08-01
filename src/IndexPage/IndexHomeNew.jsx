@@ -2,8 +2,8 @@ import "./IndexHome.css";
 // import { useNavigate } from "react-router-dom";
 import logo2 from "../assets/png/logo.png";
 import { useState, useEffect } from "react";
-// import VechiclesDetails from "../components/Vehicles/VechiclesDetails";
-import Vehicles from "../components/Vehicles/Vehicles";
+import VechiclesDetails from "../components/Vehicles/VechiclesDetails";
+// import Vehicles from "../components/Vehicles/Vehicles";
 import { useGetVehicleQuery } from "../services/userAuthApi";
 import Spinner from "../Spinner/Spinner";
 
@@ -14,7 +14,12 @@ function IndexHomeNew() {
   // const [activeTab, setActiveTab] = useState("vehicles");
   const token = localStorage.getItem("token");
   const { data, isSuccess, isLoading } = useGetVehicleQuery(token);
-
+  useEffect(() => {
+    if (!token) {
+      window.location.href = "/";
+      return;
+    }
+  }, [token]);
   useEffect(() => {
     if (isSuccess) {
       setDetails(data.data);
@@ -43,7 +48,8 @@ function IndexHomeNew() {
       <div className="container w-50">
         <p className="my-4 infoT fs-5">Hello, {user_data.name || "User"}</p>
       </div>
-      <Vehicles />
+      {/* <Vehicles /> */}
+      <VechiclesDetails />
     </div>
   );
 }

@@ -115,17 +115,24 @@ const Signup = () => {
             </div>
           </div>
           <div className="col-12">
-            <label for="inputAddress2" class="mt-2 opacity-50">To add multiple vehicle number use comma (,) in between. </label>
+            <label for="inputAddress2" class="mt-2 opacity-50">
+              To add multiple vehicle number use comma (,) in between.{" "}
+            </label>
             <div class="input-wrapper">
               <i class="fas fa-car"></i>
-              <input 
-                type="text" 
-                class="form-control input-field2" 
-                id="inputAddress2" 
+              <input
+                type="text"
+                class="form-control input-field2"
+                id="inputAddress2"
                 name="v_number"
-                onChange={handleChange}
+                onChange={(e) =>
+                  setCredentials({
+                    ...credentials,
+                    v_number: e.target?.value?.toUpperCase(),
+                  })
+                }
                 value={credentials.v_number}
-                placeholder="Vehicle Numbers...Ex- AS11GXXXX, MH15WCXXXX" 
+                placeholder="Vehicle Numbers...Ex- AS11GXXXX, MH15WCXXXX"
               />
             </div>
           </div>
