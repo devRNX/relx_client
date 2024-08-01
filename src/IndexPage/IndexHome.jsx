@@ -11,7 +11,7 @@ function IndexHome() {
   const navigate = useNavigate()
 
   const [details, setDetails] = useState([]);
-  const [activeTab, setActiveTab] = useState('createA')
+  const [activeTab, setActiveTab] = useState('vehicles')
   const token = localStorage.getItem("token");
   const { data, isSuccess, isLoading } = useGetVehicleQuery(token);
 
@@ -87,9 +87,9 @@ function IndexHome() {
         <div className="card text-center rounded-4 border-success-subtle shadow">
           <div className="card-header my-4 bg-white">
             <ul className="nav nav-tabs card-header-tabs">
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <a className={`nav-link ${activeTab === 'createA' ? 'active' : ''}`} onClick={() => setActiveTab('createA')} aria-current="true" href="#createA">Create Alerts</a>
-              </li>
+              </li> */}
               <li className="nav-item">
                 <a className={`nav-link ${activeTab === 'vehicles' ? 'active' : ''}`} onClick={() => setActiveTab('vehicles')} href="#vehicle">Your Vehicles</a>
               </li>
@@ -99,7 +99,7 @@ function IndexHome() {
             </ul>
           </div>
           <div className="card-body">
-            {activeTab === 'createA' && <CreateAlert/>}
+            {/* {activeTab === 'createA' && <CreateAlert/>} */}
             {activeTab === 'vehicles' && <Vehicles/>}
             
           </div>

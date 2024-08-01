@@ -4,13 +4,13 @@ import { Link } from "react-router-dom";
 
 
 function NavbarNew() {
-    const [tokens, setTokens] = useState(() => getToken());
+    const [tokens, setTokens] = useState(getToken);
     useEffect(() => {
         const newToken = getToken();
         if (newToken) {
         setTokens(newToken);
         }
-    }, []);
+    }, [tokens]);
 
     const token = getToken();
     const handleSignOut = () => {
@@ -33,18 +33,6 @@ function NavbarNew() {
                 </li>
             </>
             }
-            <li class="nav-item me-4">
-                {
-                    token ? 
-                    <>
-                        <Link class="nav-link text-success fw-medium" aria-current="page" to="/alerts">Create Alert</Link>
-                    </> : 
-                    <>
-                         <Link class="nav-link text-success fw-medium" aria-current="page" to="/alerts">About Us</Link>
-                    </>
-                }
-                
-            </li>
             <li class="nav-item me-4">
                 {
                     token ? 
