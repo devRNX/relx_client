@@ -152,9 +152,9 @@ function VehiclesDetails() {
         <p className="text-center mb-1 v_card fw-semibold">
           Your Vehicle Details
         </p>
-        <p className="text-center mb-5">
+        {/* <p className="text-center mb-5">
           You can Add or Modify your Vehicle details...
-        </p>
+        </p> */}
         <div className="container">
           <div className="row">
             {paginatedData.map((vehicle) => (

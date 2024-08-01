@@ -41,7 +41,7 @@ function IndexHomeNew() {
         <span>
           Set a reminder with us at RelyNRelax, and we'll notify you on your
           chosen date <br />
-          <span className="urlLink">via call, WhatsApp, SMS, or Email.</span>
+          <span className="urlLink">via Call, WhatsApp or SMS, Email.</span>
         </span>
       </div>
 
