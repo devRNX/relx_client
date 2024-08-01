@@ -1,4 +1,3 @@
-import CreateAlert from './CreateAlert'
 import './IndexHome.css'
 import { useNavigate } from 'react-router-dom'
 import logo2 from '../assets/png/logo.png'
