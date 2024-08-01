@@ -34,7 +34,6 @@ function VehiclesDetails() {
 
   const [deleteVehicle] = useDeleteVehicleMutation();
   const [loading, setLoading] = useState(false);
-
   const [alertData, setAlertData] = useState({
     id: "",
     alertType: "",
@@ -42,7 +41,7 @@ function VehiclesDetails() {
     vehicleNumber: "",
     alertName: "",
   });
-
+  console.log(loading);
   const handleChange = (e) => {
     const { name, value } = e.target;
     setAlertData({
