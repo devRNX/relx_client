@@ -4,7 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { Modal, Button, Dropdown } from "react-bootstrap";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import Spinner from "../../Spinner/Spinner";
-import logo2 from "../../assets/png/logo.png";
+// import logo2 from "../../assets/png/logo.png";
 import {
   useDeleteVehicleMutation,
   useGetVehicleQuery,
@@ -145,11 +145,11 @@ function VehiclesDetails() {
   return (
     <>
       <div className="v_background">
-        <img
+        {/* <img
           src={logo2}
           className="rounded mx-auto d-block logoImg1"
           alt="img"
-        />
+        /> */}
         <p className="text-center mb-1 v_card fw-semibold">
           Your Vehicle Details
         </p>
