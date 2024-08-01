@@ -14,7 +14,12 @@ function IndexHomeNew() {
   // const [activeTab, setActiveTab] = useState("vehicles");
   const token = localStorage.getItem("token");
   const { data, isSuccess, isLoading } = useGetVehicleQuery(token);
-
+  useEffect(() => {
+    if (!token) {
+      window.location.href = "/";
+      return;
+    }
+  }, [token]);
   useEffect(() => {
     if (isSuccess) {
       setDetails(data.data);
