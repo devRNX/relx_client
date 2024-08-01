@@ -4,16 +4,16 @@ import logo2 from "../assets/png/logo.png";
 import { useState, useEffect } from "react";
 import VechiclesDetails from "../components/Vehicles/VechiclesDetails";
 // import Vehicles from "../components/Vehicles/Vehicles";
-import { useGetVehicleQuery } from "../services/userAuthApi";
+import {useLoggedUserQuery} from "../services/userAuthApi";
 import Spinner from "../Spinner/Spinner";
 
 function IndexHomeNew() {
   // const navigate = useNavigate();
 
-  const [details, setDetails] = useState([]);
+  const [details, setDetails] = useState({});
   // const [activeTab, setActiveTab] = useState("vehicles");
   const token = localStorage.getItem("token");
-  const { data, isSuccess, isLoading } = useGetVehicleQuery(token);
+  const { data, isSuccess, isLoading } = useLoggedUserQuery(token);
   useEffect(() => {
     if (!token) {
       window.location.href = "/";
@@ -22,16 +22,20 @@ function IndexHomeNew() {
   }, [token]);
   useEffect(() => {
     if (isSuccess) {
-      setDetails(data.data);
+      if(data.status){
+        setDetails({
+          id: data.message[0]._id,
+          name: data.message[0].name,
+          email: data.message[0].email
+        });
+      }
     }
   }, [data, isSuccess]);
   if (isLoading) {
     return <Spinner />;
   }
-  // const a_count = details?.a_count || 0;
-  // const sCount = details?.sCount || 0;
-  const u_data = details?.u_data || [];
-  const user_data = u_data[0] || {};
+
+  // console.log(details)
 
   return (
     <div className="background-image">
@@ -46,7 +50,7 @@ function IndexHomeNew() {
       </div>
 
       <div className="container w-50">
-        <p className="my-4 infoT fs-5">Hello, {user_data.name || "User"}</p>
+        <p className="my-4 infoT fs-5">Hello {details.name} ...</p>
       </div>
       {/* <Vehicles /> */}
       <VechiclesDetails />

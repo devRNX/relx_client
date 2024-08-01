@@ -31,6 +31,16 @@ export const userAuthApi = createApi({
       }),
     }),
 
+    loggedUser: builder.query({
+      query: (token) => ({
+        url: '/loggedUser',
+        method: "GET",
+        headers: {
+          authorization: `Bearer ${token}`,
+        }
+      })
+    }),
+
     resetPassword: builder.mutation({
       query: (credentials) => ({
         url: "/reset/password/link",
@@ -143,4 +153,5 @@ export const {
   useGetVehicleQuery,
   useAddVehicleMutation,
   useDeleteVehicleMutation,
+  useLoggedUserQuery
 } = userAuthApi;

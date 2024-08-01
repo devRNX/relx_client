@@ -41,7 +41,6 @@ function VehiclesDetails() {
     vehicleNumber: "",
     alertName: "",
   });
-  console.log(loading);
   const handleChange = (e) => {
     const { name, value } = e.target;
     setAlertData({
@@ -60,7 +59,7 @@ function VehiclesDetails() {
       toast.error("Fail to create Alert. Please try again");
     }
   };
-
+  console.log(loading);
   const handleDelete = async (id) => {
     setLoading(true);
     try {
@@ -82,6 +81,7 @@ function VehiclesDetails() {
       setLoading(false);
     }
   };
+
 
   useEffect(() => {
     if (isSuccess && data) {
