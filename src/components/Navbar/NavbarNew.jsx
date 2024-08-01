@@ -45,7 +45,7 @@ function NavbarNew() {
               aria-current="page"
               to="/dashboard"
             >
-              Home
+              Dashboard
             </Link>
           </li>
         )}

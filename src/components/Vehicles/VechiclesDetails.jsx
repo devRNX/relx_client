@@ -49,8 +49,7 @@ function VehiclesDetails() {
     });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async () => {
     const response = await createAlert({ alertData, token });
     if (response?.data?.setAlert?.status === true) {
       toast.success("Alert Created Successfully");
@@ -107,7 +106,20 @@ function VehiclesDetails() {
   }
 
   if (!vData || vData.length === 0) {
-    return <div>No vehicle data available.</div>;
+    return (
+      <div className="container">
+        No vehicle data available.
+        <div className="d-flex justify-content-start my-3">
+          <button
+            className="btn btn-outline-primary"
+            type="button"
+            onClick={() => navigate("/add-vehicle")}
+          >
+            Add Vehicle Number
+          </button>
+        </div>
+      </div>
+    );
   }
 
   const itemsPerPage = 9;
@@ -152,10 +164,20 @@ function VehiclesDetails() {
         <p className="text-center mb-1 v_card fw-semibold">
           Your Vehicle Details
         </p>
-        <p className="text-center mb-5">
+        {/* <p className="text-center mb-5">
           You can Add or Modify your Vehicle details...
-        </p>
+        </p> */}
+
         <div className="container">
+          <div className="d-flex justify-content-start my-3">
+            <button
+              className="btn btn-outline-primary"
+              type="button"
+              onClick={() => navigate("/add-vehicle")}
+            >
+              Add Vehicle Number
+            </button>
+          </div>
           <div className="row">
             {paginatedData.map((vehicle) => (
               <div key={vehicle._id} className={`col-md-4 mb-5`}>
@@ -226,15 +248,6 @@ function VehiclesDetails() {
               </div>
             </div>
           </div>
-          <div className="d-flex justify-content-center my-3">
-            <button
-              className="btn btn-outline-primary"
-              type="button"
-              onClick={() => navigate("/add-vehicle")}
-            >
-              Add Vehicle Number
-            </button>
-          </div>
         </div>
       </div>
 
@@ -245,7 +258,7 @@ function VehiclesDetails() {
         </Modal.Header>
         <Modal.Body>
           {selectedVehicle && (
-            <form onSubmit={handleSubmit} className="mt-3">
+            <div className="mt-3 d-flex flex-column">
               <input
                 type="hidden"
                 name="id"
@@ -258,7 +271,7 @@ function VehiclesDetails() {
                 </label>
                 <input
                   type="text"
-                  className="form-control"
+                  className="form-control custom-input"
                   id="vehicleNumber"
                   name="vehicleNumber"
                   value={alertData.vehicleNumber}
@@ -272,7 +285,7 @@ function VehiclesDetails() {
                 </label>
                 <input
                   type="date"
-                  className="form-control"
+                  className="form-control custom-input"
                   id="alertDate"
                   name="alertDate"
                   value={alertData.alertDate}
@@ -285,7 +298,7 @@ function VehiclesDetails() {
                   <strong>Select Alert Type:</strong>
                 </label>
                 <select
-                  className="form-control"
+                  className="form-control custom-input"
                   id="alertType"
                   name="alertType"
                   value={alertData.alertType}
@@ -306,7 +319,7 @@ function VehiclesDetails() {
                 </label>
                 <input
                   type="text"
-                  className="form-control"
+                  className="form-control custom-input"
                   id="alertName"
                   name="alertName"
                   value={alertData.alertName}
@@ -315,10 +328,14 @@ function VehiclesDetails() {
                   required
                 />
               </div>
-              <button type="submit" className="btn btn-primary w-100">
+              <button
+                type="submit"
+                className="btn btn-primary w-50"
+                onClick={handleSubmit}
+              >
                 Submit
               </button>
-            </form>
+            </div>
           )}
         </Modal.Body>
         <Modal.Footer>

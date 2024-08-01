@@ -43,9 +43,11 @@ function IndexHomeNew() {
       <div className="container my-5 mainText">
         <h1 className="fw-regular">Rely on us and Relax ..</h1>
         <span>
-          Set a reminder with us at RelyNRelax, and we'll notify you on your
-          chosen date <br />
-          <span className="urlLink">via call, WhatsApp, SMS, or Email.</span>
+          Create alert with required details and relyNrelax will notify you on
+          selected reminder date <br />
+          <span className="urlLink">
+            via call, whatsapp or sms, email, etc.
+          </span>
         </span>
       </div>
 
