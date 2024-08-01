@@ -5,7 +5,7 @@ import {
   useDeleteVehicleMutation,
   useGetVehicleQuery,
 } from "../../services/userAuthApi";
-import toast from "react-toastify";
+import { toast } from "react-toastify";
 
 function Vehicles() {
   const navigate = useNavigate();
