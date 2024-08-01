@@ -50,8 +50,7 @@ function VehiclesDetails() {
     });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async () => {
     const response = await createAlert({ alertData, token });
     if (response?.data?.setAlert?.status === true) {
       toast.success("Alert Created Successfully");
@@ -329,7 +328,11 @@ function VehiclesDetails() {
                   required
                 />
               </div>
-              <button type="submit" className="btn btn-primary w-50">
+              <button
+                type="submit"
+                className="btn btn-primary w-50"
+                onClick={handleSubmit}
+              >
                 Submit
               </button>
             </div>
