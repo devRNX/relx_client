@@ -34,25 +34,27 @@ function App() {
     <BrowserRouter>
       <GlobalStyle />
       <NavbarNew />
-      <Routes>
-        <Route
-          path="/"
-          exact
-          // element={!token ? <Home /> : <Navigate to="/dashboard" />}
-          element={!token ? <Index /> : <Navigate to="/dashboard" />}
-        />
-        <Route path="/register" exact element={<Auth mode="signup-mode" />} />
-        <Route path="/login" exact element={<Auth mode="" />} />
-        <Route path="/reset/password/" exact element={<ResetPass />} />
-        <Route path={"/new/password/:id?"} exact element={<NewPassword />} />
-        <Route path={"/admin/login"} exact element={<AdminLogIn />} />
-        <Route path={"/admin/dashboard"} exact element={<AdminDashboard />} />
-        <Route path="/dashboard" element={<IndexHomeNew />} />
-        <Route path="/alerts" element={<Dashboard />} />
-        <Route path={"/edit/:v_id?"} element={<VechiclesDetails />} />
-        <Route path={"/add-vehicle"} element={<AddVehicle />} />
-        <Route path={"/edit-vehicle/:id"} element={<EditVehicle />} />
-      </Routes>
+      <div style={{ minHeight: "70vh" }}>
+        <Routes>
+          <Route
+            path="/"
+            exact
+            // element={!token ? <Home /> : <Navigate to="/dashboard" />}
+            element={!token ? <Index /> : <Navigate to="/dashboard" />}
+          />
+          <Route path="/register" exact element={<Auth mode="signup-mode" />} />
+          <Route path="/login" exact element={<Auth mode="" />} />
+          <Route path="/reset/password/" exact element={<ResetPass />} />
+          <Route path={"/new/password/:id?"} exact element={<NewPassword />} />
+          <Route path={"/admin/login"} exact element={<AdminLogIn />} />
+          <Route path={"/admin/dashboard"} exact element={<AdminDashboard />} />
+          <Route path="/dashboard" element={<IndexHomeNew />} />
+          <Route path="/alerts" element={<Dashboard />} />
+          <Route path={"/edit/:v_id?"} element={<VechiclesDetails />} />
+          <Route path={"/add-vehicle"} element={<AddVehicle />} />
+          <Route path={"/edit-vehicle/:id"} element={<EditVehicle />} />
+        </Routes>
+      </div>
       <Footer />
     </BrowserRouter>
   );

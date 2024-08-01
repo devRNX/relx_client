@@ -26,11 +26,11 @@ const EditVehicle = () => {
         data: { _id: id, v_number: vehicleNumber },
       });
       if (response.data?.status === true) {
-        toast.success("Vehicle added successfully");
+        toast.success("Vehicle updated successfully");
         navigate("/dashboard");
       } else {
         toast.error(
-          response.data?.message || "Fail to add vehicle. Please try again"
+          response.data?.message || "Fail to update vehicle. Please try again"
         );
       }
     } catch (error) {
