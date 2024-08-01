@@ -12,12 +12,13 @@ import Dashboard from "./components/Dashboard/Dashboard";
 import ResetPass from "./components/ResetPassword/ResetPass";
 import NewPassword from "./components/ResetPassword/NewPassword";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import IndexHome from "./IndexPage/IndexHome";
+import IndexHomeNew from "./IndexPage/IndexHomeNew";
 
-import './app.css';
+import "./app.css";
 import Index from "./Index/Index";
 import NavbarNew from "./components/Navbar/NavbarNew";
 import VechiclesDetails from "./components/Vehicles/VechiclesDetails";
+import AddVehicle from "./components/Vehicles/AddVehicle";
 
 function App() {
   const [token, setToken] = useState(() => getToken());
@@ -38,18 +39,19 @@ function App() {
           exact
           // element={!token ? <Home /> : <Navigate to="/dashboard" />}
           element={!token ? <Index /> : <Navigate to="/dashboard" />}
-        /> 
+        />
         <Route path="/register" exact element={<Auth mode="signup-mode" />} />
         <Route path="/login" exact element={<Auth mode="" />} />
         <Route path="/reset/password/" exact element={<ResetPass />} />
         <Route path={"/new/password/:id?"} exact element={<NewPassword />} />
         <Route path={"/admin/login"} exact element={<AdminLogIn />} />
         <Route path={"/admin/dashboard"} exact element={<AdminDashboard />} />
-        <Route path="/dashboard" element={<IndexHome />} />
+        <Route path="/dashboard" element={<IndexHomeNew />} />
         <Route path="/alerts" element={<Dashboard />} />
-        <Route path={"/edit/:v_id?"} element={<VechiclesDetails/>} />
+        <Route path={"/edit/:v_id?"} element={<VechiclesDetails />} />
+        <Route path={"/add-vehicle"} element={<AddVehicle />} />
       </Routes>
-        <Footer/>
+      <Footer />
     </BrowserRouter>
   );
 }

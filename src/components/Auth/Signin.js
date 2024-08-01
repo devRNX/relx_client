@@ -24,15 +24,15 @@ const Signin = () => {
       const response = await loginUser(logInData);
       console.log(response);
       setLoading(true);
-      if (response.data.status === true) {
+      if (response?.data?.status === true) {
         setLoading(false);
         localStorage.setItem("token", response.data.token);
         navigate("/dashboard");
         window.location.reload();
       } else {
         setLoading(false);
-        const msg = response.data.message;
-        toast.error(msg);
+        const msg = response?.data?.message;
+        toast.error(msg || "An error occurred");
       }
       setLoading(false);
     } catch (error) {

@@ -4,8 +4,8 @@ export const userAuthApi = createApi({
   reducerPath: "userAuthApi",
 
   baseQuery: fetchBaseQuery({
-    baseUrl: `https://apis.relynrelax.com/api/user`,
-    // baseUrl: `http://localhost:5001/api/user`,
+    // baseUrl: `https://apis.relynrelax.com/api/user`,
+    baseUrl: `http://localhost:5001/api/user`,
   }),
 
   endpoints: (builder) => ({
@@ -85,15 +85,15 @@ export const userAuthApi = createApi({
     }),
 
     editVehicle: builder.mutation({
-      query: ({token, data}) => ({
+      query: ({ token, data }) => ({
         url: "/vehicle",
         method: "PATCH",
         body: data,
         headers: {
           "Content-Type": "application/json",
-          authorization: `Bearer ${token}`
+          authorization: `Bearer ${token}`,
         },
-      })
+      }),
     }),
 
     getVehicle: builder.query({
@@ -101,11 +101,10 @@ export const userAuthApi = createApi({
         url: "/get/vehicle",
         method: "GET",
         headers: {
-          authorization: `Bearer ${token}`
-        }
-      })
-    })
-
+          authorization: `Bearer ${token}`,
+        },
+      }),
+    }),
   }),
 });
 
@@ -118,5 +117,5 @@ export const {
   useGetAllAlertsQuery,
   useGetAllUsersQuery,
   useEditVehicleMutation,
-  useGetVehicleQuery
+  useGetVehicleQuery,
 } = userAuthApi;
