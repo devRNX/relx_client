@@ -27,7 +27,7 @@ export const alertAuthApi = createApi({
         headers: {
           authorization: `Bearer ${token}`,
         },
-      })
+      }),
     }),
 
     getAlerts: builder.query({
@@ -70,5 +70,5 @@ export const {
   useGetAlertsQuery,
   useDeleteAlertMutation,
   useSendAlertsMutation,
-  useDetailsQuery
+  useDetailsQuery,
 } = alertAuthApi;
