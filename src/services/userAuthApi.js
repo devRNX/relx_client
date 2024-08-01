@@ -96,7 +96,7 @@ export const userAuthApi = createApi({
 
     editVehicle: builder.mutation({
       query: ({ token, data }) => ({
-        url: "/vehicle",
+        url: "/edit-vehicle",
         method: "PATCH",
         body: data,
         headers: {
@@ -130,7 +130,7 @@ export const userAuthApi = createApi({
 
     deleteVehicle: builder.mutation({
       query: ({ token, id }) => ({
-        url: `/vehicle/${id}`,
+        url: `/delete-vehicle/${id}`,
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",

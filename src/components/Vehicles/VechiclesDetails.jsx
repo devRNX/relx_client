@@ -51,7 +51,7 @@ function VehiclesDetails() {
 
   const handleSubmit = async () => {
     const response = await createAlert({ alertData, token });
-    if (response?.data?.setAlert?.status === true) {
+    if (response?.data?.status === true) {
       toast.success("Alert Created Successfully");
       window.location.reload();
     } else {
@@ -66,6 +66,7 @@ function VehiclesDetails() {
         token,
         id,
       });
+      console.log(response);
       if (response.data?.status === true) {
         toast.success("Vehicle deleted successfully");
         window.location.reload();
@@ -136,7 +137,7 @@ function VehiclesDetails() {
       ...prevData,
       id: vehicle._id,
       vehicleNumber: vehicle.v_number,
-      alertName: vehicle.v_number, // Assuming 'alertName' refers to the vehicle number
+      alertName: vehicle.v_number,
     }));
     setShowModal(true);
   };
@@ -171,7 +172,7 @@ function VehiclesDetails() {
         <div className="container">
           <div className="d-flex justify-content-start my-3">
             <button
-              className="btn btn-outline-primary"
+              className="btn btn-outline-success"
               type="button"
               onClick={() => navigate("/add-vehicle")}
             >
@@ -330,7 +331,7 @@ function VehiclesDetails() {
               </div>
               <button
                 type="submit"
-                className="btn btn-primary w-50"
+                className="btn btn-outline-success w-50"
                 onClick={handleSubmit}
               >
                 Submit

@@ -83,7 +83,7 @@ const EditVehicle = () => {
                     </button>
                     <button
                       type="submit"
-                      className="btn btn-primary btn-block"
+                      className="btn btn-outline-success btn-block"
                       disabled={loading}
                     >
                       Submit

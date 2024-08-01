@@ -3,7 +3,6 @@ import "./IndexHome.css";
 import logo2 from "../assets/png/logo.png";
 import { useState, useEffect } from "react";
 import VechiclesDetails from "../components/Vehicles/VechiclesDetails";
-// import Vehicles from "../components/Vehicles/Vehicles";
 import {useLoggedUserQuery} from "../services/userAuthApi";
 import Spinner from "../Spinner/Spinner";
 
@@ -35,7 +34,7 @@ function IndexHomeNew() {
     return <Spinner />;
   }
 
-  // console.log(details)
+  // console.log(details.name)
 
   return (
     <div className="background-image">
