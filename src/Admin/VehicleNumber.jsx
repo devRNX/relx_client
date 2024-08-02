@@ -31,7 +31,7 @@ function VehicleNumber() {
             <tr key={vehicle._id}>
               <td className="text-center">{vehicle.user?.name || 'N/A'}</td>
               <td className="text-center">{vehicle.user?.phone_number || 'N/A'}</td>
-              <td className="text-center">{vehicle.user?.alt_phone_number || 'N/A'}</td>
+              <td className="text-center">{vehicle.user?.alternate_number || 'N/A'}</td>
               <td className="text-center">{vehicle.user?.email || 'N/A'}</td>
               <td className="text-center">{vehicle.v_number || 'N/A'}</td>
             </tr>

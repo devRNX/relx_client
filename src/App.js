@@ -5,7 +5,6 @@ import GlobalStyle from "./global-styles";
 import AdminLogIn from "./Admin/AdminLogIn";
 import { useEffect, useState } from "react";
 import Footer from "./components/Footer/Footer";
-// import Navbar from "./components/Navbar/Navbar";
 import { getToken } from "./services/localStorage";
 import AdminDashboard from "./Admin/AdminDashboard";
 import Dashboard from "./components/Dashboard/Dashboard";
@@ -46,8 +45,8 @@ function App() {
           <Route path="/login" exact element={<Auth mode="" />} />
           <Route path="/reset/password/" exact element={<ResetPass />} />
           <Route path={"/new/password/:id?"} exact element={<NewPassword />} />
-          <Route path={"/admin/login"} exact element={<AdminLogIn />} />
-          <Route path={"/admin/dashboard"} exact element={<AdminDashboard />} />
+          <Route path={"/raincoat/entry"} exact element={<AdminLogIn />} />
+          <Route path={"/raincoat/dashboard"} exact element={<AdminDashboard />} />
           <Route path="/dashboard" element={<IndexHomeNew />} />
           <Route path="/alerts" element={<Dashboard />} />
           <Route path={"/edit/:v_id?"} element={<VechiclesDetails />} />
