@@ -9,6 +9,7 @@ export const alertAuthApi = createApi({
   }),
 
   endpoints: (builder) => ({
+    
     createAlert: builder.mutation({
       query: ({ alertData, token }) => ({
         url: "/add-alert",

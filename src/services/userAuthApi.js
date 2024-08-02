@@ -138,10 +138,22 @@ export const userAuthApi = createApi({
         },
       }),
     }),
+
+    adminVehicles: builder.query({
+      query: () => ({
+        url: '/get-all-vehicles',
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }),
+    })
+
   }),
 });
 
 export const {
+  useAdminVehiclesQuery,
   useRegisterUserMutation,
   useLoginUserMutation,
   useResetPasswordMutation,
@@ -153,5 +165,5 @@ export const {
   useGetVehicleQuery,
   useAddVehicleMutation,
   useDeleteVehicleMutation,
-  useLoggedUserQuery
+  useLoggedUserQuery,
 } = userAuthApi;

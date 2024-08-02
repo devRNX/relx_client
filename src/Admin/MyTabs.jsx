@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
 import DisplayAllUser from './DisplayAllUser'
-import {useGetAllAlertsQuery } from '../services/userAuthApi'; 
+import {useGetAllAlertsQuery} from '../services/userAuthApi'; 
+import VehicleNumber from "./VehicleNumber"
 import UserList from './UserList';
-
-
 
 function MyTabs() {
   const [activeTab, setActiveTab] = useState('home');
   const {data} = useGetAllAlertsQuery();
-  // const alertCount = data.length;
   const handleTabClick = (tab) => {
     setActiveTab(tab);
   };
@@ -18,7 +16,7 @@ function MyTabs() {
       <ul className="nav nav-tabs">
         <li className="nav-item">
           <a
-            className={`nav-link ${activeTab === 'home' ? 'active' : ''}`}
+            className={`nav-link me-3 ${activeTab === 'home' ? 'active' : ''}`}
             onClick={() => handleTabClick('home')}
             href="#home"
           >
@@ -27,7 +25,7 @@ function MyTabs() {
         </li>
         <li className="nav-item">
           <a
-            className={`nav-link ${activeTab === 'profile' ? 'active' : ''}`}
+            className={`nav-link me-3 ${activeTab === 'profile' ? 'active' : ''}`}
             onClick={() => handleTabClick('profile')}
             href="#profile"
           >
@@ -36,7 +34,7 @@ function MyTabs() {
         </li>
         <li className="nav-item">
           <a
-            className={`nav-link ${activeTab === 'contact' ? 'active' : ''}`}
+            className={`nav-link  me-3 ${activeTab === 'contact' ? 'active' : ''}`}
             onClick={() => handleTabClick('contact')}
             href="#contact"
           >
@@ -49,7 +47,7 @@ function MyTabs() {
             onClick={() => handleTabClick('cron')}
             href="#cron"
           >
-            Cron List
+            Vehicle List
           </a>
         </li>
       </ul>
@@ -69,9 +67,8 @@ function MyTabs() {
            <DisplayAllUser alertData={data}/>
         </div>
         <div className={`tab-pane ${activeTab === 'cron' ? 'active' : ''}`} id="cron">
-          <h1 className='fs-4 my-3'>Cron List</h1>
-           {/* <DisplayAllUser alertData={data}/> */}
-           <p>Comming Soon....</p>
+          <h1 className='fs-4 my-3'>Vehicle Numbers</h1>
+           <VehicleNumber/>
         </div>
       </div>
     </div>
