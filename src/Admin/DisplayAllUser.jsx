@@ -44,7 +44,7 @@ const DisplayAllUser = ({ alertData }) => {
                             <td className='text-center'>{data.a_end_date}</td>
                             <td className='text-center'>{data.a_status}</td>
                             <td className='text-center'>{data.a_type}</td>
-                            <td className='text-center'>{data.a_v_number}</td>
+                            <td className='text-center'>{data.a_v_id}</td>
                             <td className='text-center'>
                                 <button className='btn btn-primary' onClick={() => sendAlert(data._id)}>
                                     Send
