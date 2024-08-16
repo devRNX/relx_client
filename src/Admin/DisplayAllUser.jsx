@@ -30,7 +30,7 @@ const DisplayAllUser = ({ alertData }) => {
                         <th className='text-center'>Reminder Date</th>
                         <th className='text-center'>Reminder Status</th>
                         <th className='text-center'>Reminder Type</th>
-                        <th className='text-center'>Vehicle Number</th>
+                        <th className='text-center'>Vehicle ID</th>
                         <th className='text-center'>Send Reminder</th>
                     </tr>
                 </thead>
