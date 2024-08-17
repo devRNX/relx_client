@@ -24,7 +24,9 @@ const AddVehicle = () => {
       });
       if (response.data?.status === true) {
         toast.success("Vehicle added successfully");
-        navigate("/dashboard");
+        setTimeout(() => {
+          window.location.href = "/dashboard";
+        }, 500);
       } else {
         toast.error(
           response.data?.message || "Fail to add vehicle. Please try again"

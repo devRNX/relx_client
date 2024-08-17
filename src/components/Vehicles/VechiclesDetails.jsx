@@ -58,9 +58,16 @@ function VehiclesDetails() {
       toast.error("Fail to create Alert. Please try again");
     }
   };
-  console.log(loading);
-  const handleDelete = async (id) => {
+
+  const handleDelete = async (id, vehicle) => {
+    const confirmDelete = window.confirm(
+      `Are you sure you want to delete the vehicle with number ${vehicle.v_number}? \n\n` +
+        `Note: This action cannot be undone. All alerts associated with the vehicle will be deleted, and you will no longer receive reminders for this vehicle. If you want to add alerts to this vehicle in the future, you will need to add the vehicle again.`
+    );
+    if (!confirmDelete) return;
+
     setLoading(true);
+    console.log(loading);
     try {
       const response = await deleteVehicle({
         token,
@@ -81,7 +88,6 @@ function VehiclesDetails() {
       setLoading(false);
     }
   };
-
 
   useEffect(() => {
     if (isSuccess && data) {
@@ -211,7 +217,7 @@ function VehiclesDetails() {
                         </Dropdown.Item>
                         <Dropdown.Item
                           onClick={() => {
-                            handleDelete(vehicle._id);
+                            handleDelete(vehicle._id, vehicle);
                           }}
                         >
                           Delete

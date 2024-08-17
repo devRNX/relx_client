@@ -26,9 +26,10 @@ const EditVehicle = () => {
         data: { _id: id, v_number: vehicleNumber },
       });
       if (response.data?.status === true) {
-        // toast.success("Vehicle updated successfully");
-        navigate("/dashboard");
-        window.location.reload();
+        toast.success("Vehicle updated successfully");
+        setTimeout(() => {
+          window.location.href = "/dashboard";
+        }, 500);
       } else {
         toast.error(
           response.data?.message || "Fail to update vehicle. Please try again"

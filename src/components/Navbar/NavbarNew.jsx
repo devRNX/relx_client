@@ -76,7 +76,7 @@ function NavbarNew() {
             <Link
               class="nav-link text-success fw-medium"
               aria-current="page"
-              onClick={() => scrollTo("about")}
+              onClick={() => scrollTo("about-us")}
             >
               About Us
             </Link>
@@ -87,7 +87,7 @@ function NavbarNew() {
           <Link
             class="nav-link text-success fw-medium"
             aria-current="page"
-            onClick={() => scrollTo("footer")}
+            onClick={() => scrollTo("contact-us")}
           >
             Contact Us
           </Link>

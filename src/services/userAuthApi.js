@@ -33,12 +33,12 @@ export const userAuthApi = createApi({
 
     loggedUser: builder.query({
       query: (token) => ({
-        url: '/loggedUser',
+        url: "/loggedUser",
         method: "GET",
         headers: {
           authorization: `Bearer ${token}`,
-        }
-      })
+        },
+      }),
     }),
 
     resetPassword: builder.mutation({
@@ -141,14 +141,13 @@ export const userAuthApi = createApi({
 
     adminVehicles: builder.query({
       query: () => ({
-        url: '/get-all-vehicles',
+        url: "/get-all-vehicles",
         method: "GET",
         headers: {
           "Content-Type": "application/json",
         },
       }),
-    })
-
+    }),
   }),
 });
 
