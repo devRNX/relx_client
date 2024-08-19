@@ -4,6 +4,7 @@ import {
   FaLinkedinIn,
   FaInstagram,
   FaYoutube,
+  FaWhatsapp,
 } from "react-icons/fa";
 
 const Footer = () => {
@@ -56,28 +57,35 @@ const Footer = () => {
             <p className="mb-0">Phone: +91 9395783957</p>
             <div className="mt-3">
               <a
-                href="https://www.facebook.com"
+                href="https://www.facebook.com/profile.php?id=61558344111424&mibextid=ZbWKwL"
                 className="text-dark me-3"
                 aria-label="Facebook"
               >
                 <FaFacebookF />
               </a>
               <a
-                href="https://www.linkedin.com"
+                href=" https://wa.me/919395783957"
+                className="text-dark me-3"
+                aria-label="Whatsapp"
+              >
+                <FaWhatsapp />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/rely-n-relax-872a29323?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
                 className="text-dark me-3"
                 aria-label="LinkedIn"
               >
                 <FaLinkedinIn />
               </a>
               <a
-                href="https://www.instagram.com"
+                href="https://www.instagram.com/relynrelax?igsh=MXRxZDA0djQyeGEzbA=="
                 className="text-dark me-3"
                 aria-label="Instagram"
               >
                 <FaInstagram />
               </a>
               <a
-                href="https://www.youtube.com"
+                href="https://www.youtube.com/@RelyNRelax"
                 className="text-dark"
                 aria-label="YouTube"
               >
