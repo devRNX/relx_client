@@ -5,6 +5,8 @@ import {
   FaInstagram,
   FaYoutube,
   FaWhatsapp,
+  FaPhone,
+  FaEnvelope,
 } from "react-icons/fa";
 
 const Footer = () => {
@@ -19,7 +21,7 @@ const Footer = () => {
       <div className="container py-3">
         <div className="row">
           {/* About Us Section */}
-          <div className="col-md-8 mb-4" id="about-us">
+          <div className="col-md-7 mb-4" id="about-us">
             <h5>About Us</h5>
             <p className="mb-0 footer-about">
               At relyNrelax, we understand the importance of staying ahead with
@@ -51,10 +53,17 @@ const Footer = () => {
 
           <div className="col"></div>
           {/* Contact Us Section */}
-          <div className="col-md-2 mb-4" id="contact-us">
+          <div className="col-md-4 mb-4 " id="contact-us">
             <h5>Contact Us</h5>
-            <p className="mb-0">helpdesk.relynrelax@gmail.com</p>
-            <p className="mb-0">Phone: +91 9395783957</p>
+            <a
+              className="mb-0 d-block text-dark"
+              href="mailto:helpdesk.relynrelax@gmail.com"
+            >
+              <FaEnvelope /> helpdesk.relynrelax@gmail.com
+            </a>
+            <a className="mb-0 d-block text-dark" href="tel:+91 9395783957">
+              <FaPhone /> +91 9395783957
+            </a>
             <div className="mt-3">
               <a
                 href="https://www.facebook.com/profile.php?id=61558344111424&mibextid=ZbWKwL"
