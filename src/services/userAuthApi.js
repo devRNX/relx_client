@@ -4,7 +4,7 @@ export const userAuthApi = createApi({
   reducerPath: "userAuthApi",
 
   baseQuery: fetchBaseQuery({
-    baseUrl: `https://apis.relynrelax.com/api/user`,
+    baseUrl: `https://api.relynrelax.com/api/user`,
     // baseUrl: `http://localhost:5001/api/user`,
   }),
 
